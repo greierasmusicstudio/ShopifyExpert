@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify Expert România - Magazin Online în 72 de ore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/logo.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968875.png" alt="Shopify Logo" class="logo">
+                <span class="brand-text">SHOPIFY<span class="brand-accent">EXPERT</span>.RO</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#pachete" class="nav-link">Pachete</a>
+                <a href="#comparatie" class="nav-link">Comparație</a>
+                <a href="#economii" class="nav-link">Economii</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="tel:+40712345678" class="nav-phone">
+                    <i class="fas fa-phone"></i>
+                    0712 345 678
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Transformă magazinul tău fizic în <span class="highlight">ONLINE</span></h1>
+                <p class="hero-subtitle">Domeniu .ro <strong>GRATUIT</strong> primul an • Setup complet Shopify • Training personalizat • Suport dedicat</p>
+                <div class="hero-cta">
+                    <a href="#pachete" class="btn btn-primary">Vezi pachetele <i class="fas fa-arrow-down"></i></a>
+                    <a href="#contact" class="btn btn-secondary">Vreau ofertă personalizată</a>
+                </div>
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Setup profesional</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Domeniu inclus</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Conformitate ANPC</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Training inclus</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Magazin Online">
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopify Offer Banner -->
+    <section class="offer-banner">
+        <div class="container">
+            <div class="offer-content">
+                <span class="offer-badge">OFERTĂ SPECIALĂ</span>
+                <h3>🚨 Shopify România: Primele 3 luni doar <span class="highlight">1 EURO/lună</span>!</h3>
+                <p>Valabil pentru toate pachetele noastre. Economisești peste 80€ în primele 3 luni!</p>
+            </div>
+            <div class="offer-timer">
+                <p>Oferta limitată: <span id="countdown">30</span> zile rămase</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="pachete" class="packages">
+        <div class="container">
+            <div class="section-header">
+                <h2>Alege pachetul perfect pentru afacerea ta</h2>
+                <p>Toate pachetele includ domeniu .ro GRATUIT primul an (apoi 100 RON/an)</p>
+            </div>
+            
+            <div class="packages-grid">
+                <!-- BASIC Package -->
+                <div class="package-card basic-card">
+                    <div class="package-header">
+                        <h3>BASIC</h3>
+                        <div class="package-price">
+                            <span class="price">500 <small>RON</small></span>
+                            <span class="vat">+ TVA</span>
+                        </div>
+                        <p class="price-note">Preț setup unic (abonament Shopify separat)</p>
+                    </div>
+                    
+                    <div class="package-body">
+                        <div class="package-included">
+                            <h4><i class="fas fa-check-circle"></i> INCLUS:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> <strong>10 produse</strong> configurate</li>
+                                <li><i class="fas fa-check"></i> <strong>3 categorii</strong> de produse</li>
+                                <li><i class="fas fa-check"></i> Template simplu și intuitiv</li>
+                                <li><i class="fas fa-check"></i> <strong>Training 2 ore</strong> platformă</li>
+                                <li><i class="fas fa-check"></i> Implementare procesator plăți</li>
+                                <li><i class="fas fa-check"></i> <strong>Domeniu .ro GRATUIT 1 an</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="package-excluded">
+                            <h4><i class="fas fa-info-circle"></i> ABONAMENT SEPARAT:</h4>
+                            <ul>
+                                <li><i class="fas fa-euro-sign"></i> Shopify Basic: 1€/lună (3 luni) → 27€/lună</li>
+                                <li><i class="fas fa-box"></i> Aplicații terțe (opționale)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="package-cta">
+                            <a href="#contact" class="btn btn-package" data-package="basic">Alege Basic</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PLUS Package -->
+                <div class="package-card plus-card featured">
+                    <div class="package-badge">CEL MAI ALEȘ</div>
+                    <div class="package-header">
+                        <h3>PLUS</h3>
+                        <div class="package-price">
+                            <span class="price">2.000 <small>RON</small></span>
+                            <span class="vat">+ TVA</span>
+                        </div>
+                        <p class="price-note">Preț setup unic (abonament Shopify separat)</p>
+                    </div>
+                    
+                    <div class="package-body">
+                        <div class="package-included">
+                            <h4><i class="fas fa-check-circle"></i> INCLUS (tot din BASIC +):</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> <strong>25 produse</strong> configurate</li>
+                                <li><i class="fas fa-check"></i> <strong>5 categorii</strong> + subcategorii</li>
+                                <li><i class="fas fa-check"></i> Design semi-customizat pentru brand</li>
+                                <li><i class="fas fa-check"></i> <strong>Training 3 ore</strong> extins</li>
+                                <li><i class="fas fa-check"></i> Implementare formular contact</li>
+                                <li><i class="fas fa-check"></i> <strong>Etichete ANPC & SOL</strong> (conform legislației)</li>
+                                <li><i class="fas fa-check"></i> Link-uri directe ANPC/SOL în footer</li>
+                                <li><i class="fas fa-check"></i> <strong>Domeniu .ro GRATUIT 1 an</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="package-excluded">
+                            <h4><i class="fas fa-info-circle"></i> ABONAMENT SEPARAT:</h4>
+                            <ul>
+                                <li><i class="fas fa-euro-sign"></i> Shopify Basic: 1€/lună (3 luni) → 27€/lună</li>
+                                <li><i class="fas fa-box"></i> Aplicații terțe (opționale)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="package-cta">
+                            <a href="#contact" class="btn btn-package featured-btn" data-package="plus">Alege Plus</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- TOP Package -->
+                <div class="package-card top-card">
+                    <div class="package-badge premium">PREMIUM</div>
+                    <div class="package-header">
+                        <h3>TOP</h3>
+                        <div class="package-price">
+                            <span class="price">4.500 <small>RON</small></span>
+                            <span class="vat">+ TVA</span>
+                        </div>
+                        <p class="price-note">Preț setup unic (abonament Shopify separat)</p>
+                    </div>
+                    
+                    <div class="package-body">
+                        <div class="package-included">
+                            <h4><i class="fas fa-check-circle"></i> INCLUS (tot din PLUS +):</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> <strong>100+ produse</strong> configurate</li>
+                                <li><i class="fas fa-check"></i> <strong>20 categorii + 10 subcategorii</strong></li>
+                                <li><i class="fas fa-check"></i> Design <strong>100% custom</strong> pentru brand</li>
+                                <li><i class="fas fa-check"></i> <strong>Training 5 ore</strong> complet</li>
+                                <li><i class="fas fa-check"></i> Implementare Pixel Google, Facebook, TikTok Ads</li>
+                                <li><i class="fas fa-check"></i> Google Analytics configurare avansată</li>
+                                <li><i class="fas fa-check"></i> Autentificare <strong>2FA cu SMS</strong></li>
+                                <li><i class="fas fa-check"></i> <strong>SEO complet</strong> (on-page + technical)</li>
+                                <li><i class="fas fa-check"></i> <strong>Suport WhatsApp 60 zile</strong></li>
+                                <li><i class="fas fa-check"></i> <strong>Domeniu .ro GRATUIT 1 an</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="package-excluded">
+                            <h4><i class="fas fa-info-circle"></i> ABONAMENT SEPARAT:</h4>
+                            <ul>
+                                <li><i class="fas fa-euro-sign"></i> Shopify Basic: 1€/lună (3 luni) → 27€/lună</li>
+                                <li><i class="fas fa-box"></i> Aplicații terțe (opționale)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="package-cta">
+                            <a href="#contact" class="btn btn-package" data-package="top">Alege Top</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section id="comparatie" class="comparison">
+        <div class="container">
+            <div class="section-header">
+                <h2>Comparație detaliată între pachete</h2>
+                <p>Vezi clar diferențele pentru a alege cel mai bun pachet pentru afacerea ta</p>
+            </div>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="feature-col">CARACTERISTICĂ</th>
+                            <th>BASIC</th>
+                            <th>PLUS</th>
+                            <th>TOP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">Preț setup (+ TVA)</td>
+                            <td class="basic-cell">500 RON</td>
+                            <td class="plus-cell">2.000 RON</td>
+                            <td class="top-cell">4.500 RON</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Produse incluse</td>
+                            <td class="basic-cell">10</td>
+                            <td class="plus-cell">25</td>
+                            <td class="top-cell">100+</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Categorii</td>
+                            <td class="basic-cell">3</td>
+                            <td class="plus-cell">5 + subcategorii</td>
+                            <td class="top-cell">20 + 10 sub</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Design</td>
+                            <td class="basic-cell">Template simplu</td>
+                            <td class="plus-cell">Semi-custom</td>
+                            <td class="top-cell">100% custom</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Training</td>
+                            <td class="basic-cell">2 ore</td>
+                            <td class="plus-cell">3 ore</td>
+                            <td class="top-cell">5 ore</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">ANPC/SOL</td>
+                            <td class="basic-cell"><i class="fas fa-times"></i></td>
+                            <td class="plus-cell"><i class="fas fa-check"></i></td>
+                            <td class="top-cell"><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Pixels Ads</td>
+                            <td class="basic-cell"><i class="fas fa-times"></i></td>
+                            <td class="plus-cell"><i class="fas fa-times"></i></td>
+                            <td class="top-cell"><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">2FA Autentificare</td>
+                            <td class="basic-cell"><i class="fas fa-times"></i></td>
+                            <td class="plus-cell"><i class="fas fa-times"></i></td>
+                            <td class="top-cell"><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">SEO Complet</td>
+                            <td class="basic-cell"><i class="fas fa-times"></i></td>
+                            <td class="plus-cell"><i class="fas fa-times"></i></td>
+                            <td class="top-cell"><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Suport WhatsApp</td>
+                            <td class="basic-cell">30 zile</td>
+                            <td class="plus-cell">30 zile</td>
+                            <td class="top-cell">60 zile</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Domeniu .ro</td>
+                            <td class="basic-cell">GRATUIT 1 an</td>
+                            <td class="plus-cell">GRATUIT 1 an</td>
+                            <td class="top-cell">GRATUIT 1 an</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Savings Section -->
+    <section id="economii" class="savings">
+        <div class="container">
+            <div class="section-header">
+                <h2>💰 Economisești <span class="highlight">peste 600 RON</span> cu orice pachet!</h2>
+                <p>Valoarea reală a serviciilor pe care le primești</p>
+            </div>
+            
+            <div class="savings-grid">
+                <div class="saving-card">
+                    <div class="saving-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Domeniu .ro GRATUIT</h3>
+                    <p class="saving-value">Valoare: <strong>100 RON</strong></p>
+                    <p class="saving-desc">Primul an complet gratuit la toate pachetele</p>
+                </div>
+                
+                <div class="saving-card">
+                    <div class="saving-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Training specializat</h3>
+                    <p class="saving-value">Valoare: <strong>300+ RON</strong></p>
+                    <p class="saving-desc">Training personalizat cu expert Shopify</p>
+                </div>
+                
+                <div class="saving-card">
+                    <div class="saving-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Setup profesionist</h3>
+                    <p class="saving-value">Valoare: <strong>400+ RON</strong></p>
+                    <p class="saving-desc">Configurare completă economisește 20+ ore</p>
+                </div>
+                
+                <div class="saving-card">
+                    <div class="saving-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Suport dedicat</h3>
+                    <p class="saving-value">Valoare: <strong>200+ RON</strong></p>
+                    <p class="saving-desc">Asistență directă pe WhatsApp</p>
+                </div>
+            </div>
+            
+            <div class="savings-total">
+                <div class="total-box">
+                    <h4>TOTAL ECONOMII</h4>
+                    <div class="total-amount">1.000+ RON</div>
+                    <p>+ oferta Shopify 1€/lună primele 3 luni (economie 78€)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Completează formularul și începem!</h2>
+                <p>Te vom suna în maxim 30 de minute pentru detalii</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3><i class="fas fa-phone-alt"></i> Sună acum</h3>
+                    <a href="tel:+40712345678" class="contact-phone">0712 345 678</a>
+                    
+                    <h3><i class="fas fa-envelope"></i> Scrie-ne</h3>
+                    <a href="mailto:contact@shopifyexpert.ro" class="contact-email">contact@shopifyexpert.ro</a>
+                    
+                    <h3><i class="fas fa-clock"></i> Program lucru</h3>
+                    <p>Luni - Vineri: 9:00 - 20:00</p>
+                    <p>Sâmbătă: 10:00 - 14:00</p>
+                    
+                    <div class="contact-urgency">
+                        <i class="fas fa-bolt"></i>
+                        <p><strong>URGENȚĂ?</strong> Ne găsești pe WhatsApp 24/7</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form-wrapper">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nume complet *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Telefon *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="package">Alege pachetul *</label>
+                            <select id="package" name="package" required>
+                                <option value="">Selectează pachetul</option>
+                                <option value="basic">BASIC - 500 RON + TVA</option>
+                                <option value="plus">PLUS - 2.000 RON + TVA</option>
+                                <option value="top">TOP - 4.500 RON + TVA</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="business">Despre afacerea ta</label>
+                            <textarea id="business" name="business" rows="3" placeholder="Ce produse/servicii vindeți? Aveți deja produse fotografiate?"></textarea>
+                        </div>
+                        
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-submit">
+                                <i class="fas fa-paper-plane"></i> Trimite cererea
+                            </button>
+                            <p class="form-note">* Câmpurile marcate cu asterisc sunt obligatorii</p>
+                        </div>
+                    </form>
+                    
+                    <div id="formSuccess" class="form-success hidden">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Mesajul tău a fost trimis!</h3>
+                        <p>Te vom suna în maxim 30 de minute la numărul furnizat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968875.png" alt="Shopify Logo" class="logo">
+                        <span class="brand-text">SHOPIFY<span class="brand-accent">EXPERT</span>.RO</span>
+                    </div>
+                    <p class="footer-description">Specialiști în crearea de magazine online pe Shopify pentru afacerile din România.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Link-uri utile</h4>
+                    <ul>
+                        <li><a href="#pachete">Pachete servicii</a></li>
+                        <li><a href="#comparatie">Comparație pachete</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="https://www.shopify.com/ro" target="_blank">Shopify România</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-legal">
+                    <h4>Conformitate legală</h4>
+                    <ul>
+                        <li><a href="https://anpc.ro" target="_blank">ANPC - Autoritatea Națională pentru Protecția Consumatorilor</a></li>
+                        <li><a href="https://sol.ro" target="_blank">SOL - Societatea pentru Deschidere și Libertate</a></li>
+                        <li><a href="#" class="terms-link">Termeni și condiții</a></li>
+                        <li><a href="#" class="privacy-link">Politică de confidențialitate</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 ShopifyExpert.ro. Toate drepturile rezervate. Prețurile afișate nu includ TVA.</p>
+                <p class="footer-note">Shopify este o marcă înregistrată a Shopify Inc. Nu suntem afiliați cu Shopify Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/40712345678?text=Bună!%20As%20dori%20o%20oferta%20pentru%20magazin%20online." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
