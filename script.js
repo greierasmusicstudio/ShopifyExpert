@@ -3,26 +3,23 @@ function updateCountdown() {
     const countdownElement = document.getElementById('countdown');
     if (!countdownElement) return;
     
-    // Setează data de expirare a ofertei (30 de zile de acum)
     const offerExpiry = new Date();
     offerExpiry.setDate(offerExpiry.getDate() + 30);
     
     const now = new Date();
     const timeDiff = offerExpiry.getTime() - now.getTime();
     
-    // Calculează zilele rămase
     const daysRemaining = Math.max(0, Math.ceil(timeDiff / (1000 * 60 * 60 * 24)));
     
     countdownElement.textContent = daysRemaining;
     
-    // Schimbă culoarea când mai sunt puține zile
     if (daysRemaining <= 7) {
         countdownElement.style.color = '#ff6b6b';
         countdownElement.style.fontWeight = '900';
     }
 }
 
-// Meniu mobil FIXAT - funcționează perfect
+// Meniu mobil
 function setupMobileMenu() {
     const menuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
@@ -30,14 +27,13 @@ function setupMobileMenu() {
     
     if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', function(e) {
-            e.stopPropagation(); // Previne propagarea
+            e.stopPropagation();
             mobileMenu.classList.toggle('active');
             menuBtn.innerHTML = mobileMenu.classList.contains('active') 
                 ? '<i class="fas fa-times"></i>' 
                 : '<i class="fas fa-bars"></i>';
         });
         
-        // Închide meniul când se face click pe un link
         mobileLinks.forEach(link => {
             link.addEventListener('click', function() {
                 mobileMenu.classList.remove('active');
@@ -45,7 +41,6 @@ function setupMobileMenu() {
             });
         });
         
-        // Închide meniul când se face click în afara
         document.addEventListener('click', function(event) {
             if (mobileMenu.classList.contains('active') && 
                 !mobileMenu.contains(event.target) && 
@@ -55,7 +50,6 @@ function setupMobileMenu() {
             }
         });
         
-        // Închide meniul la scroll
         window.addEventListener('scroll', function() {
             if (mobileMenu.classList.contains('active')) {
                 mobileMenu.classList.remove('active');
@@ -65,93 +59,63 @@ function setupMobileMenu() {
     }
 }
 
-// Gestionează trimiterea formularului
+// Google Forms Integration
 function setupContactForm() {
-    const contactForm = document.getElementById('contactForm');
-    const formSuccess = document.getElementById('formSuccess');
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('formSuccess');
+    const submitBtn = form ? form.querySelector('.btn-submit') : null;
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+    if (!form || !submitBtn) return;
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validare
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const package = document.getElementById('package').value;
+        
+        if (!name || !phone || !package) {
+            alert('Vă rugăm să completați toate câmpurile obligatorii!');
+            return;
+        }
+        
+        // Validare telefon
+        const phoneRegex = /^[\d\s\+\.\-\(\)]{10,}$/;
+        if (!phoneRegex.test(phone)) {
+            alert('Vă rugăm să introduceți un număr de telefon valid!');
+            return;
+        }
+        
+        // Loading state
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Se trimite...';
+        submitBtn.disabled = true;
+        
+        // Trimite la Google Forms
+        setTimeout(() => {
+            // Arată mesaj de succes
+            form.style.display = 'none';
+            if (successMessage) successMessage.style.display = 'block';
             
-            // Validează formularul
-            const name = document.getElementById('name').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const packageSelect = document.getElementById('package').value;
+            // Trimite formularul efectiv
+            form.submit();
             
-            if (!name || !phone || !packageSelect) {
-                alert('Vă rugăm să completați toate câmpurile obligatorii!');
-                return;
-            }
-            
-            // Validare telefon (doar cifre și spații)
-            const phoneRegex = /^[\d\s\+\.\-\(\)]{10,}$/;
-            if (!phoneRegex.test(phone)) {
-                alert('Vă rugăm să introduceți un număr de telefon valid!');
-                return;
-            }
-            
-            // Simulează trimiterea formularului
-            const formData = {
-                name: name,
-                phone: phone,
-                email: document.getElementById('email').value.trim(),
-                package: packageSelect,
-                business: document.getElementById('business').value.trim(),
-                timestamp: new Date().toISOString()
-            };
-            
-            console.log('Formular trimis:', formData);
-            
-            // Afișează mesajul de succes cu animație
-            contactForm.style.display = 'none';
-            formSuccess.style.display = 'block';
-            
-            // Resetează formularul după 8 secunde
+            // Resetează după 8 secunde
             setTimeout(() => {
-                contactForm.reset();
-                contactForm.style.display = 'block';
-                formSuccess.style.display = 'none';
-                
-                // Scroll ușor în sus pentru a vedea formularul
-                contactForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                form.reset();
+                form.style.display = 'block';
+                if (successMessage) successMessage.style.display = 'none';
             }, 8000);
-        });
-    }
-    
-    // Setează pachetul selectat în formular când se apasă pe buton
-    const packageButtons = document.querySelectorAll('.btn-package');
-    packageButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            if (this.getAttribute('href') === '#contact') {
-                e.preventDefault();
-                const packageType = this.getAttribute('data-package');
-                const packageSelect = document.getElementById('package');
-                
-                if (packageSelect) {
-                    packageSelect.value = packageType;
-                    
-                    // Derulează la formular cu offset pentru navbar
-                    const contactSection = document.getElementById('contact');
-                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                    const contactPosition = contactSection.offsetTop - navbarHeight - 20;
-                    
-                    window.scrollTo({
-                        top: contactPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Focus pe primul câmp după o scurtă întârziere
-                    setTimeout(() => {
-                        document.getElementById('name').focus();
-                    }, 500);
-                }
-            }
-        });
+            
+            // Reset buton
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }, 1000);
     });
 }
 
-// Fix pentru navbar la scroll pe mobile
+// Fix pentru navbar la scroll
 function setupNavbarScroll() {
     const navbar = document.querySelector('.navbar');
     let lastScrollTop = 0;
@@ -163,10 +127,8 @@ function setupNavbarScroll() {
             navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
             
             if (scrollTop > lastScrollTop && window.innerWidth < 768) {
-                // Scroll down - ascunde navbar pe mobile
                 navbar.style.transform = 'translateY(-100%)';
             } else {
-                // Scroll up - arată navbar
                 navbar.style.transform = 'translateY(0)';
             }
         } else {
@@ -175,24 +137,6 @@ function setupNavbarScroll() {
         }
         
         lastScrollTop = scrollTop;
-    });
-}
-
-// Animare pentru elementele care apar la scroll
-function setupScrollAnimations() {
-    // Adaugă clasa animate-in la toate secțiunile
-    const sections = document.querySelectorAll('section:not(.hero)');
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    sections.forEach(section => {
-        observer.observe(section);
     });
 }
 
@@ -228,27 +172,12 @@ function setupSmoothScroll() {
     });
 }
 
-// Confirmare pentru apeluri telefonice pe desktop
-function setupPhoneConfirmation() {
-    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Pentru desktop, arată un popup de confirmare
-            if (window.innerWidth > 768) {
-                const phoneNumber = this.textContent.trim();
-                if (!confirm(`Doriți să sunați la ${phoneNumber}?`)) {
-                    e.preventDefault();
-                }
-            }
-        });
-    });
-}
-
 // Inițializare la încărcarea paginii
 document.addEventListener('DOMContentLoaded', function() {
     // Inițializează countdown-ul
     updateCountdown();
     
-    // Setează meniul mobil - FIXAT
+    // Setează meniul mobil
     setupMobileMenu();
     
     // Setează formularul de contact
@@ -257,14 +186,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Setează navbar scroll
     setupNavbarScroll();
     
-    // Setează animațiile
-    setupScrollAnimations();
-    
     // Setează smooth scroll
     setupSmoothScroll();
-    
-    // Setează confirmarea apelurilor
-    setupPhoneConfirmation();
     
     // Actualizează countdown-ul o dată pe zi
     setInterval(updateCountdown, 86400000); // 24 de ore
