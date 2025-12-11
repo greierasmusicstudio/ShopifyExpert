@@ -12,7 +12,6 @@
     <link rel="icon" type="image/x-icon" href="images/logo.svg">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
@@ -45,7 +44,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
@@ -82,7 +80,6 @@
         </div>
     </section>
 
-    <!-- Shopify Offer Banner -->
     <section class="offer-banner">
         <div class="container">
             <div class="offer-content">
@@ -96,7 +93,6 @@
         </div>
     </section>
 
-    <!-- Packages Section -->
     <section id="pachete" class="packages">
         <div class="container">
             <div class="section-header">
@@ -105,7 +101,6 @@
             </div>
             
             <div class="packages-grid">
-                <!-- BASIC Package -->
                 <div class="package-card basic-card">
                     <div class="package-header">
                         <h3>BASIC</h3>
@@ -143,7 +138,6 @@
                     </div>
                 </div>
                 
-                <!-- PLUS Package -->
                 <div class="package-card plus-card featured">
                     <div class="package-badge">CEL MAI ALES</div>
                     <div class="package-header">
@@ -184,7 +178,6 @@
                     </div>
                 </div>
                 
-                <!-- TOP Package -->
                 <div class="package-card top-card">
                     <div class="package-badge premium">PREMIUM</div>
                     <div class="package-header">
@@ -231,7 +224,6 @@
         </div>
     </section>
 
-    <!-- Comparison Table -->
     <section id="comparatie" class="comparison">
         <div class="container">
             <div class="section-header">
@@ -324,7 +316,6 @@
         </div>
     </section>
 
-    <!-- Savings Section -->
     <section id="economii" class="savings">
         <div class="container">
             <div class="section-header">
@@ -380,7 +371,6 @@
         </div>
     </section>
 
-    <!-- Contact Form -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
@@ -407,14 +397,20 @@
                 </div>
                 
                 <div class="contact-form-wrapper">
-                    <!-- FORMULAR GOOGLE FORMS -->
+                    <div id="formSuccess" class="form-success hidden">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>✅ Cererea ta a fost trimisă cu succes!</h3>
+                        <p>Vei primi confirmarea pe email în câteva minute.</p>
+                        <p><small>Te vom suna la numărul furnizat pentru detalii.</small></p>
+                        <button class="btn btn-secondary" onclick="location.reload()" style="margin-top:20px; font-size: 14px; padding: 10px 20px;">Trimite încă o cerere</button>
+                    </div>
+
                     <form action="https://docs.google.com/forms/u/0/d/e/11LoIFyC6NdjWkya-B9Xwl_VNeqkgy-YTDSLN1xxG2cs/formResponse" 
                           method="POST" 
                           target="hidden_iframe"
                           id="contactForm"
                           class="contact-form">
                         
-                        <!-- Câmp ascuns pentru succes -->
                         <input type="hidden" name="fbzx" value="-5887546388333476766">
                         
                         <div class="form-group">
@@ -463,9 +459,6 @@
                                       placeholder="Ce produse/servicii vindeți? Aveți deja produse fotografiate?"></textarea>
                         </div>
                         
-                        <!-- IFRAME ascuns pentru submit -->
-                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-                        
                         <div class="form-submit">
                             <button type="submit" class="btn btn-submit">
                                 <i class="fas fa-paper-plane"></i> Trimite cererea
@@ -474,19 +467,12 @@
                         </div>
                     </form>
                     
-                    <!-- Mesaj de succes -->
-                    <div id="formSuccess" class="form-success hidden">
-                        <i class="fas fa-check-circle"></i>
-                        <h3>✅ Cererea ta a fost trimisă cu succes!</h3>
-                        <p>Vei primi confirmarea pe email în câteva minute.</p>
-                        <p><small>Te vom suna la numărul furnizat pentru detalii.</small></p>
-                    </div>
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -511,10 +497,10 @@
                 <div class="footer-legal">
                     <h4>Conformitate legală</h4>
                     <ul>
-                        <li><a href="https://anpc.ro" target="_blank" rel="noopener noreferrer">ANPC - Autoritatea Națională pentru Protecția Consumatorilor</a></li>
-                        <li><a href="https://sol.ro" target="_blank" rel="noopener noreferrer">SOL - Societatea pentru Deschidere și Libertate</a></li>
-                        <li><a href="#" class="terms-link">Termeni și condiții</a></li>
-                        <li><a href="#" class="privacy-link">Politică de confidențialitate</a></li>
+                        <li><a href="https://anpc.ro" target="_blank" rel="noopener noreferrer">ANPC</a></li>
+                        <li><a href="https://sol.ro" target="_blank" rel="noopener noreferrer">SOL</a></li>
+                        <li><a href="#">Termeni și condiții</a></li>
+                        <li><a href="#">Politică de confidențialitate</a></li>
                     </ul>
                 </div>
             </div>
@@ -526,7 +512,6 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Float -->
     <a href="https://wa.me/40785735820?text=Bună!%20Aș%20dori%20o%20oferta%20pentru%20magazin%20online." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>

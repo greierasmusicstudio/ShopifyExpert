@@ -19,7 +19,7 @@ function updateCountdown() {
     }
 }
 
-// Meniu mobil
+// Meniu mobil optimizat
 function setupMobileMenu() {
     const menuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
@@ -41,6 +41,7 @@ function setupMobileMenu() {
             });
         });
         
+        // Închide meniul la click în afară
         document.addEventListener('click', function(event) {
             if (mobileMenu.classList.contains('active') && 
                 !mobileMenu.contains(event.target) && 
@@ -49,17 +50,10 @@ function setupMobileMenu() {
                 menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             }
         });
-        
-        window.addEventListener('scroll', function() {
-            if (mobileMenu.classList.contains('active')) {
-                mobileMenu.classList.remove('active');
-                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
     }
 }
 
-// Google Forms Integration
+// Google Forms Integration - REPARAT
 function setupContactForm() {
     const form = document.getElementById('contactForm');
     const successMessage = document.getElementById('formSuccess');
@@ -67,85 +61,82 @@ function setupContactForm() {
     
     if (!form || !submitBtn) return;
     
+    // Selectarea automată a pachetului dacă venim din butoane
+    document.querySelectorAll('.btn-package').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const pkg = btn.getAttribute('data-package');
+            const select = document.getElementById('package');
+            if(select) {
+                // Mapare simplă valori
+                if(pkg === 'basic') select.selectedIndex = 1;
+                if(pkg === 'plus') select.selectedIndex = 2;
+                if(pkg === 'top') select.selectedIndex = 3;
+            }
+        });
+    });
+
+    // Gestionare submit
     form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Validare
+        // Validare de bază
         const name = document.getElementById('name').value.trim();
         const phone = document.getElementById('phone').value.trim();
-        const package = document.getElementById('package').value;
+        const packageSelected = document.getElementById('package').value;
         
-        if (!name || !phone || !package) {
+        if (!name || !phone || !packageSelected) {
+            e.preventDefault(); 
             alert('Vă rugăm să completați toate câmpurile obligatorii!');
             return;
         }
         
-        // Validare telefon
-        const phoneRegex = /^[\d\s\+\.\-\(\)]{10,}$/;
-        if (!phoneRegex.test(phone)) {
+        if (phone.length < 10) {
+            e.preventDefault();
             alert('Vă rugăm să introduceți un număr de telefon valid!');
             return;
         }
         
-        // Loading state
+        // Dacă e valid, lăsăm formularul să se trimită către iframe (NU dăm preventDefault)
+        // Dar schimbăm UI-ul imediat
+        
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Se trimite...';
         submitBtn.disabled = true;
         
-        // Trimite la Google Forms
+        // Așteptăm puțin ca datele să plece, apoi arătăm succesul
         setTimeout(() => {
-            // Arată mesaj de succes
             form.style.display = 'none';
-            if (successMessage) successMessage.style.display = 'block';
+            if (successMessage) {
+                successMessage.classList.remove('hidden');
+                successMessage.style.display = 'flex';
+            }
+            form.reset();
             
-            // Trimite formularul efectiv
-            form.submit();
-            
-            // Resetează după 8 secunde
-            setTimeout(() => {
-                form.reset();
-                form.style.display = 'block';
-                if (successMessage) successMessage.style.display = 'none';
-            }, 8000);
-            
-            // Reset buton
+            // Re-activare buton pentru viitor
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
-        }, 1000);
+        }, 1500);
     });
 }
 
 // Fix pentru navbar la scroll
 function setupNavbarScroll() {
     const navbar = document.querySelector('.navbar');
-    let lastScrollTop = 0;
     
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        if (scrollTop > 100) {
+        if (scrollTop > 50) {
             navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-            
-            if (scrollTop > lastScrollTop && window.innerWidth < 768) {
-                navbar.style.transform = 'translateY(-100%)';
-            } else {
-                navbar.style.transform = 'translateY(0)';
-            }
         } else {
             navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
-            navbar.style.transform = 'translateY(0)';
         }
-        
-        lastScrollTop = scrollTop;
     });
 }
 
-// Smooth scroll pentru link-uri interne
+// Smooth scroll
 function setupSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            
             if (href === '#') return;
             
             e.preventDefault();
@@ -159,64 +150,16 @@ function setupSmoothScroll() {
                     top: targetPosition,
                     behavior: 'smooth'
                 });
-                
-                // Închide meniul mobil dacă este deschis
-                const mobileMenu = document.querySelector('.mobile-menu');
-                const menuBtn = document.querySelector('.mobile-menu-btn');
-                if (mobileMenu && mobileMenu.classList.contains('active')) {
-                    mobileMenu.classList.remove('active');
-                    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                }
             }
         });
     });
 }
 
-// Inițializare la încărcarea paginii
+// Inițializare
 document.addEventListener('DOMContentLoaded', function() {
-    // Inițializează countdown-ul
     updateCountdown();
-    
-    // Setează meniul mobil
     setupMobileMenu();
-    
-    // Setează formularul de contact
     setupContactForm();
-    
-    // Setează navbar scroll
     setupNavbarScroll();
-    
-    // Setează smooth scroll
     setupSmoothScroll();
-    
-    // Actualizează countdown-ul o dată pe zi
-    setInterval(updateCountdown, 86400000); // 24 de ore
 });
-
-// Adaugă CSS pentru animații
-const style = document.createElement('style');
-style.textContent = `
-    .animate-in {
-        animation: fadeInUp 0.6s ease forwards;
-    }
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    section:not(.hero) {
-        opacity: 0;
-    }
-    
-    .hero {
-        opacity: 1 !important;
-    }
-`;
-document.head.appendChild(style);
