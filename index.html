@@ -2,223 +2,236 @@
 <html lang="ro">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17797221406"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17797221406"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17797221406');
+    </script>
 
-  gtag('config', 'AW-17797221406');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopify Expert România - Magazin Online Profesional</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="ShopifyExpert.ro — Creăm magazine online profesionale pe Shopify pentru afacerile din România. Setup complet, domeniu .ro GRATUIT, training personalizat și suport dedicat.">
+    <title>Shopify Expert România — Magazine Online Profesionale</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="images/logo.svg">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- ===== NAVBAR ===== -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">
+            <a href="#" class="nav-brand">
                 <img src="https://cdn-icons-png.flaticon.com/512/5968/5968875.png" alt="Shopify Logo" class="logo">
                 <span class="brand-text">SHOPIFY<span class="brand-accent">EXPERT</span>.RO</span>
-            </div>
+            </a>
+
             <div class="nav-menu">
+                <a href="#cum-lucram" class="nav-link">Cum Lucrăm</a>
+                <a href="#portofoliu" class="nav-link">Portofoliu</a>
                 <a href="#pachete" class="nav-link">Pachete</a>
-                <a href="#comparatie" class="nav-link">Comparație</a>
-                <a href="#economii" class="nav-link">Economii</a>
+                <a href="#faq" class="nav-link">FAQ</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <a href="tel:+40785735820" class="nav-phone">
-                    <i class="fas fa-phone"></i>
-                    0785 735 820
-                </a>
             </div>
-            <div class="mobile-menu-btn">
+
+            <a href="tel:+40785735820" class="nav-phone">
+                <i class="fas fa-phone"></i> 0785 735 820
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Meniu">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
         </div>
-        <div class="mobile-menu">
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#cum-lucram" class="mobile-link">Cum Lucrăm</a>
+            <a href="#portofoliu" class="mobile-link">Portofoliu</a>
             <a href="#pachete" class="mobile-link">Pachete</a>
-            <a href="#comparatie" class="mobile-link">Comparație</a>
-            <a href="#economii" class="mobile-link">Economii</a>
+            <a href="#faq" class="mobile-link">FAQ</a>
             <a href="#contact" class="mobile-link">Contact</a>
             <a href="tel:+40785735820" class="mobile-link phone">
-                <i class="fas fa-phone"></i>
-                0785 735 820
+                <i class="fas fa-phone"></i> 0785 735 820
             </a>
         </div>
     </nav>
 
+    <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Transformă magazinul tău fizic în <span class="highlight">magazin ONLINE</span></h1>
-                <p class="hero-subtitle">Domeniu .ro <strong>GRATUIT</strong> primul an • Setup complet Shopify • Training personalizat • Suport dedicat</p>
+                <h1 class="hero-title">
+                    Creăm magazinul tău online pe <span class="highlight">Shopify</span> — Profesional și Rapid
+                </h1>
+                <p class="hero-subtitle">
+                    Domeniu <strong>.ro GRATUIT</strong> primul an &bull; Setup complet Shopify &bull; Training personalizat &bull; Suport dedicat pe WhatsApp
+                </p>
                 <div class="hero-cta">
-                    <a href="#pachete" class="btn btn-primary">Vezi pachetele <i class="fas fa-arrow-down"></i></a>
-                    <a href="#contact" class="btn btn-secondary">Vreau ofertă personalizată</a>
+                    <a href="#pachete" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> Vezi Pachete
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        Vreau Ofertă Personalizată
+                    </a>
                 </div>
                 <div class="hero-features">
-                    <div class="feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Setup profesionist</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Domeniu inclus</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Conformitate ANPC</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Training inclus</span>
-                    </div>
+                    <div class="feature"><i class="fas fa-check-circle"></i><span>Setup profesionist</span></div>
+                    <div class="feature"><i class="fas fa-check-circle"></i><span>Domeniu .ro inclus</span></div>
+                    <div class="feature"><i class="fas fa-check-circle"></i><span>Conformitate ANPC</span></div>
+                    <div class="feature"><i class="fas fa-check-circle"></i><span>Training inclus</span></div>
                 </div>
             </div>
             <div class="hero-image">
                 <div class="image-container">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Magazin Online Shopify" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Magazin Online Shopify Profesional">
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ===== OFFER BANNER ===== -->
     <section class="offer-banner">
         <div class="container">
             <div class="offer-content">
-                <span class="offer-badge">OFERTĂ SPECIALĂ</span>
-                <h3>🚨 Shopify România: Primele 3 luni doar <span class="highlight">1 EURO/lună</span>!</h3>
-                <p>Valabil pentru toate pachetele noastre. Economisești peste 80€ în primele 3 luni!</p>
+                <span class="offer-badge">Ofertă Specială</span>
+                <div>
+                    <h3>🚨 Shopify România: Primele 3 luni doar <span class="highlight">1 EURO/lună</span>!</h3>
+                    <p>Valabil pentru toate pachetele noastre. Economisești peste 80€ în primele 3 luni!</p>
+                </div>
             </div>
             <div class="offer-timer">
-                <p>Oferta limitată: <span id="countdown">30</span> zile rămase</p>
+                <p>Oferta expiră în: <span id="countdown">30</span> zile</p>
             </div>
         </div>
     </section>
 
+    <!-- ===== CUM LUCRĂM ===== -->
     <section id="cum-lucram" class="workflow">
         <div class="container">
             <div class="section-header">
-                <h2>Cum Lucrăm: Procesul în 5 Pași</h2>
-                <p>De la idee la lansare, totul este transparent și eficient.</p>
+                <h2>Cum Lucrăm: <span class="highlight">5 Pași</span> către Lansare</h2>
+                <p>De la prima discuție până la magazin live — totul este transparent și eficient.</p>
             </div>
             <div class="workflow-grid">
                 <div class="workflow-step glass-card">
                     <div class="step-icon"><i class="fas fa-comments"></i></div>
                     <h3>1. Strategie</h3>
-                    <p>Discutăm pe chat detaliile proiectului tău.</p>
+                    <p>Discutăm nevoile afacerii tale și stabilim direcția visually.</p>
                 </div>
                 <div class="workflow-step glass-card">
                     <div class="step-icon"><i class="fas fa-cogs"></i></div>
                     <h3>2. Setup Tehnic</h3>
-                    <p>Configurăm zona tehnică fundamentală.</p>
+                    <p>Configurăm contul Shopify, domeniul și procesatoarele de plăți.</p>
                 </div>
                 <div class="workflow-step glass-card">
                     <div class="step-icon"><i class="fas fa-paint-brush"></i></div>
                     <h3>3. Design & Produse</h3>
-                    <p>Creăm un aspect glossy, high-end.</p>
+                    <p>Personalizăm tema și adăugăm toate produsele cu descrieri SEO.</p>
                 </div>
                 <div class="workflow-step glass-card">
                     <div class="step-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                    <h3>4. Training</h3>
-                    <p>Te învățăm cum să gestionezi totul singur.</p>
+                    <h3>4. Training 1-la-1</h3>
+                    <p>Sesiune dedicată în care înveți să gestionezi magazinul singur.</p>
                 </div>
                 <div class="workflow-step glass-card">
                     <div class="step-icon"><i class="fas fa-rocket"></i></div>
-                    <h3>5. Lansare</h3>
-                    <p>Devenim live și asigurăm suport complet.</p>
+                    <h3>5. Lansare & Suport</h3>
+                    <p>Devenim live și asigurăm suport complet în perioada de start.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ===== SERVICII ADIACENTE ===== -->
     <section id="servicii-adiacente" class="extra-services">
         <div class="container">
             <div class="section-header">
-                <h2>Audit & Servicii Adiacente</h2>
-                <p>Soluții complete de optimizare la pachet.</p>
+                <h2>Audit & <span class="highlight">Servicii Adiacente</span></h2>
+                <p>Dincolo de setup, optimizăm fiecare detaliu care aduce conversii.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card glass-card">
                     <div class="service-icon"><i class="fas fa-search-dollar"></i></div>
                     <h3>Audit UX/UI</h3>
-                    <p>Verificăm prezența funcționalităților cheie care aduc conversii majore magazinului.</p>
+                    <p>Analizăm întregul parcurs al clientului în magazin și identificăm punctele de fricțiune care îl fac să plece fără să cumpere.</p>
                 </div>
                 <div class="service-card glass-card">
                     <div class="service-icon"><i class="fas fa-tachometer-alt"></i></div>
                     <h3>Optimizare Viteză</h3>
-                    <p>Livrăm o experiență de navigare sub 2 secunde per pagină, crucială pentru SEO.</p>
+                    <p>Un magazin care se încarcă în sub 2 secunde crește rata de conversie cu până la 40%. Îl optimizăm tehnic complet.</p>
                 </div>
                 <div class="service-card glass-card">
-                    <div class="service-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="service-icon"><i class="fas fa-bullseye"></i></div>
                     <h3>Configurare Marketing</h3>
-                    <p>Implementăm Meta Pixel, Google Analytics în modul optim pentru reclamă.</p>
+                    <p>Configurăm Meta Pixel, Google Analytics és TikTok Pixel pentru a putea rula reclame precise și a urmări rezultatele în timp real.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ===== PORTOFOLIU ===== -->
     <section id="portofoliu" class="portfolio">
         <div class="container">
             <div class="section-header">
-                <h2>Showcase Portofoliu</h2>
-                <p>Fii martorul unui design cu adevărat premium.</p>
+                <h2>Showcase <span class="highlight">Portofoliu</span></h2>
+                <p>Magazine create de noi — design premium, performanță maximă. Hover pentru previzualizare.</p>
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item glass-card">
                     <div class="laptop-mockup">
                         <div class="laptop-screen">
-                            <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fashion Store">
+                            <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fashion Store Shopify">
                         </div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Fashion & Apparel</h3>
-                        <p class="launch-stat"><i class="fas fa-bolt highlight-icon"></i> Lansat în 48h</p>
-                        <p class="score-stat"><i class="fas fa-chart-line highlight-icon"></i> Scor Performanță: 99/100</p>
+                        <h3>Fashion &amp; Apparel</h3>
+                        <p class="launch-stat"><i class="fas fa-bolt"></i> Lansat în 48h</p>
+                        <p class="score-stat"><i class="fas fa-chart-line"></i> Scor Performanță: 99/100</p>
                     </div>
                 </div>
                 <div class="portfolio-item glass-card">
                     <div class="laptop-mockup">
                         <div class="laptop-screen">
-                            <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tech Store">
+                            <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tech Store Shopify">
                         </div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Tech & Gadgets</h3>
-                        <p class="launch-stat"><i class="fas fa-bolt highlight-icon"></i> Lansat în 48h</p>
-                        <p class="score-stat"><i class="fas fa-chart-line highlight-icon"></i> Scor Performanță: 99/100</p>
+                        <h3>Tech &amp; Gadgets</h3>
+                        <p class="launch-stat"><i class="fas fa-bolt"></i> Lansat în 48h</p>
+                        <p class="score-stat"><i class="fas fa-chart-line"></i> Scor Performanță: 99/100</p>
                     </div>
                 </div>
                 <div class="portfolio-item glass-card">
                     <div class="laptop-mockup">
                         <div class="laptop-screen">
-                            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Bio Food Store">
+                            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Bio Food Store Shopify">
                         </div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Bio Food & Cosmetics</h3>
-                        <p class="launch-stat"><i class="fas fa-bolt highlight-icon"></i> Lansat în 48h</p>
-                        <p class="score-stat"><i class="fas fa-chart-line highlight-icon"></i> Scor Performanță: 98/100</p>
+                        <h3>Bio Food &amp; Cosmetics</h3>
+                        <p class="launch-stat"><i class="fas fa-bolt"></i> Lansat în 48h</p>
+                        <p class="score-stat"><i class="fas fa-chart-line"></i> Scor Performanță: 98/100</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ===== PACHETE ===== -->
     <section id="pachete" class="packages">
         <div class="container">
             <div class="section-header">
-                <h2>Alege pachetul perfect pentru afacerea ta</h2>
+                <h2>Alege <span class="highlight">Pachetul Potrivit</span> pentru Afacerea Ta</h2>
                 <p>Toate pachetele includ domeniu .ro GRATUIT primul an (apoi 100 RON/an)</p>
             </div>
-            
+
             <div class="packages-grid">
+                <!-- BASIC -->
                 <div class="package-card basic-card">
                     <div class="package-header">
                         <h3>BASIC</h3>
@@ -228,34 +241,32 @@
                         </div>
                         <p class="price-note">Preț setup unic (abonament Shopify separat)</p>
                     </div>
-                    
                     <div class="package-body">
                         <div class="package-included">
                             <h4><i class="fas fa-check-circle"></i> INCLUS:</h4>
                             <ul>
-                                <li><i class="fas fa-check"></i> <strong>10 produse</strong> configurate</li>
-                                <li><i class="fas fa-check"></i> <strong>3 categorii</strong> de produse</li>
-                                <li><i class="fas fa-check"></i> Template simplu și intuitiv</li>
-                                <li><i class="fas fa-check"></i> <strong>Training 2 ore</strong> platformă</li>
-                                <li><i class="fas fa-check"></i> Implementare procesator plăți</li>
-                                <li><i class="fas fa-check"></i> <strong>Domeniu .ro GRATUIT 1 an</strong></li>
+                                <li><i class="fas fa-check"></i> <span><strong>10 produse</strong> configurate</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>3 categorii</strong> de produse</span></li>
+                                <li><i class="fas fa-check"></i> <span>Template simplu și intuitiv</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Training 2 ore</strong> platformă</span></li>
+                                <li><i class="fas fa-check"></i> <span>Implementare procesator plăți</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Domeniu .ro GRATUIT 1 an</strong></span></li>
                             </ul>
                         </div>
-                        
                         <div class="package-excluded">
                             <h4><i class="fas fa-info-circle"></i> ABONAMENT SEPARAT:</h4>
                             <ul>
-                                <li><i class="fas fa-euro-sign"></i> Shopify Basic: 1€/lună (3 luni) → 27€/lună</li>
-                                <li><i class="fas fa-box"></i> Aplicații terțe (opționale)</li>
+                                <li><i class="fas fa-euro-sign"></i> <span>Shopify Basic: 1€/lună (3 luni) → 27€/lună</span></li>
+                                <li><i class="fas fa-box"></i> <span>Aplicații terțe (opționale)</span></li>
                             </ul>
                         </div>
-                        
                         <div class="package-cta">
-                            <a href="#contact" class="btn btn-package" data-package="basic">Alege Basic</a>
+                            <a href="#contact" class="btn-package" data-package="basic">Alege Basic <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                
+
+                <!-- PLUS -->
                 <div class="package-card plus-card featured">
                     <div class="package-badge">CEL MAI ALES</div>
                     <div class="package-header">
@@ -266,36 +277,34 @@
                         </div>
                         <p class="price-note">Preț setup unic (abonament Shopify separat)</p>
                     </div>
-                    
                     <div class="package-body">
                         <div class="package-included">
                             <h4><i class="fas fa-check-circle"></i> INCLUS (tot din BASIC +):</h4>
                             <ul>
-                                <li><i class="fas fa-check"></i> <strong>25 produse</strong> configurate</li>
-                                <li><i class="fas fa-check"></i> <strong>5 categorii</strong> + subcategorii</li>
-                                <li><i class="fas fa-check"></i> Design semi-customizat pentru brand</li>
-                                <li><i class="fas fa-check"></i> <strong>Training 3 ore</strong> extins</li>
-                                <li><i class="fas fa-check"></i> Implementare formular contact</li>
-                                <li><i class="fas fa-check"></i> <strong>Etichete ANPC & SOL</strong> (conform legislației)</li>
-                                <li><i class="fas fa-check"></i> Link-uri directe ANPC/SOL în footer</li>
-                                <li><i class="fas fa-check"></i> <strong>Domeniu .ro GRATUIT 1 an</strong></li>
+                                <li><i class="fas fa-check"></i> <span><strong>25 produse</strong> configurate</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>5 categorii</strong> + subcategorii</span></li>
+                                <li><i class="fas fa-check"></i> <span>Design semi-customizat pentru brand</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Training 3 ore</strong> extins</span></li>
+                                <li><i class="fas fa-check"></i> <span>Implementare formular contact</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Etichete ANPC &amp; SOL</strong></span></li>
+                                <li><i class="fas fa-check"></i> <span>Link-uri directe ANPC/SOL în footer</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Domeniu .ro GRATUIT 1 an</strong></span></li>
                             </ul>
                         </div>
-                        
                         <div class="package-excluded">
                             <h4><i class="fas fa-info-circle"></i> ABONAMENT SEPARAT:</h4>
                             <ul>
-                                <li><i class="fas fa-euro-sign"></i> Shopify Basic: 1€/lună (3 luni) → 27€/lună</li>
-                                <li><i class="fas fa-box"></i> Aplicații terțe (opționale)</li>
+                                <li><i class="fas fa-euro-sign"></i> <span>Shopify Basic: 1€/lună (3 luni) → 27€/lună</span></li>
+                                <li><i class="fas fa-box"></i> <span>Aplicații terțe (opționale)</span></li>
                             </ul>
                         </div>
-                        
                         <div class="package-cta">
-                            <a href="#contact" class="btn btn-package featured-btn" data-package="plus">Alege Plus</a>
+                            <a href="#contact" class="btn-package featured-btn" data-package="plus">Alege Plus <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                
+
+                <!-- TOP -->
                 <div class="package-card top-card">
                     <div class="package-badge premium">PREMIUM</div>
                     <div class="package-header">
@@ -306,35 +315,31 @@
                         </div>
                         <p class="price-note">Preț setup unic (abonament Shopify separat)</p>
                     </div>
-                    
                     <div class="package-body">
                         <div class="package-included">
                             <h4><i class="fas fa-check-circle"></i> INCLUS (tot din PLUS +):</h4>
                             <ul>
-                                <li><i class="fas fa-check"></i> <strong>100+ produse</strong> configurate</li>
-                                <li><i class="fas fa-check"></i> <strong>20 categorii + 10 subcategorii</strong></li>
-                                <li><i class="fas fa-check"></i> Design <strong>100% custom</strong> pentru brand</li>
-                                <li><i class="fas fa-check"></i> <strong>Training 5 ore</strong> complet</li>
-                                <li><i class="fas fa-check"></i> Implementare Pixel Google, Facebook, TikTok Ads</li>
-                                <li><i class="fas fa-check"></i> Google Analytics configurare avansată</li>
-                                <li><i class="fas fa-check"></i> Autentificare <strong>2FA cu SMS</strong></li>
-                                <li><i class="fas fa-check"></i> <strong>SEO complet</strong> (on-page + technical)</li>
-                                <li><i class="fas fa-check"></i> <strong>Suport WhatsApp 60 zile</strong></li>
-                                <li><i class="fas fa-check"></i> <strong>Domeniu .ro GRATUIT 1 an</strong></li>
-                                <li><i class="fas fa-check"></i> Toate conformitățile legale incluse</li>
+                                <li><i class="fas fa-check"></i> <span><strong>100+ produse</strong> configurate</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>20 categorii + 10 subcategorii</strong></span></li>
+                                <li><i class="fas fa-check"></i> <span>Design <strong>100% custom</strong></span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Training 5 ore</strong> complet</span></li>
+                                <li><i class="fas fa-check"></i> <span>Pixel Google, Facebook, TikTok Ads</span></li>
+                                <li><i class="fas fa-check"></i> <span>Google Analytics avansat</span></li>
+                                <li><i class="fas fa-check"></i> <span>Autentificare <strong>2FA cu SMS</strong></span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>SEO complet</strong> (on-page + technical)</span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Suport WhatsApp 60 zile</strong></span></li>
+                                <li><i class="fas fa-check"></i> <span><strong>Domeniu .ro GRATUIT 1 an</strong></span></li>
                             </ul>
                         </div>
-                        
                         <div class="package-excluded">
                             <h4><i class="fas fa-info-circle"></i> ABONAMENT SEPARAT:</h4>
                             <ul>
-                                <li><i class="fas fa-euro-sign"></i> Shopify Basic: 1€/lună (3 luni) → 27€/lună</li>
-                                <li><i class="fas fa-box"></i> Aplicații terțe (opționale)</li>
+                                <li><i class="fas fa-euro-sign"></i> <span>Shopify Basic: 1€/lună (3 luni) → 27€/lună</span></li>
+                                <li><i class="fas fa-box"></i> <span>Aplicații terțe (opționale)</span></li>
                             </ul>
                         </div>
-                        
                         <div class="package-cta">
-                            <a href="#contact" class="btn btn-package" data-package="top">Alege Top</a>
+                            <a href="#contact" class="btn-package" data-package="top">Alege Top <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -342,13 +347,13 @@
         </div>
     </section>
 
+    <!-- ===== TABEL COMPARAȚIE ===== -->
     <section id="comparatie" class="comparison">
         <div class="container">
             <div class="section-header">
-                <h2>Comparație detaliată între pachete</h2>
-                <p>Vezi clar diferențele pentru a alege cel mai bun pachet pentru afacerea ta</p>
+                <h2>Comparație <span class="highlight">Detaliată</span> între Pachete</h2>
+                <p>Alege pachetul perfect cu o vizualizare clară a tuturor diferențelor</p>
             </div>
-            
             <div class="comparison-table-container">
                 <div class="comparison-table">
                     <table>
@@ -362,13 +367,13 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="feature-name">Preț setup (+ TVA)</td>
+                                <td class="feature-name">Preț setup</td>
                                 <td class="basic-cell">500 RON</td>
                                 <td class="plus-cell">2.000 RON</td>
                                 <td class="top-cell">4.500 RON</td>
                             </tr>
                             <tr>
-                                <td class="feature-name">Produse incluse</td>
+                                <td class="feature-name">Produse configurate</td>
                                 <td class="basic-cell">10</td>
                                 <td class="plus-cell">25</td>
                                 <td class="top-cell">100+</td>
@@ -380,52 +385,46 @@
                                 <td class="top-cell">20 + 10 sub</td>
                             </tr>
                             <tr>
-                                <td class="feature-name">Design</td>
-                                <td class="basic-cell">Template simplu</td>
-                                <td class="plus-cell">Semi-custom</td>
-                                <td class="top-cell">100% custom</td>
-                            </tr>
-                            <tr>
-                                <td class="feature-name">Training</td>
+                                <td class="feature-name">Training inclus</td>
                                 <td class="basic-cell">2 ore</td>
                                 <td class="plus-cell">3 ore</td>
                                 <td class="top-cell">5 ore</td>
                             </tr>
                             <tr>
-                                <td class="feature-name">ANPC/SOL (conformitate)</td>
-                                <td class="basic-cell"><i class="fas fa-times"></i></td>
-                                <td class="plus-cell"><i class="fas fa-check"></i></td>
-                                <td class="top-cell"><i class="fas fa-check"></i></td>
+                                <td class="feature-name">Domeniu .ro GRATUIT</td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
                             </tr>
                             <tr>
-                                <td class="feature-name">Pixels Ads (Google/FB/TikTok)</td>
-                                <td class="basic-cell"><i class="fas fa-times"></i></td>
-                                <td class="plus-cell"><i class="fas fa-times"></i></td>
-                                <td class="top-cell"><i class="fas fa-check"></i></td>
+                                <td class="feature-name">Design customizat</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
                             </tr>
                             <tr>
-                                <td class="feature-name">2FA Autentificare</td>
-                                <td class="basic-cell"><i class="fas fa-times"></i></td>
-                                <td class="plus-cell"><i class="fas fa-times"></i></td>
-                                <td class="top-cell"><i class="fas fa-check"></i></td>
+                                <td class="feature-name">Etichete ANPC &amp; SOL</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                                <td><i class="fas fa-check"></i></td>
                             </tr>
                             <tr>
-                                <td class="feature-name">SEO Complet</td>
-                                <td class="basic-cell"><i class="fas fa-times"></i></td>
-                                <td class="plus-cell"><i class="fas fa-times"></i></td>
-                                <td class="top-cell"><i class="fas fa-check"></i></td>
+                                <td class="feature-name">Pixel Ads (Meta / Google / TikTok)</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-check"></i></td>
                             </tr>
                             <tr>
-                                <td class="feature-name">Suport WhatsApp</td>
-                                <td class="basic-cell">30 zile</td>
-                                <td class="plus-cell">30 zile</td>
+                                <td class="feature-name">SEO complet</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-check"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Suport WhatsApp post-lansare</td>
+                                <td><i class="fas fa-times"></i></td>
+                                <td><i class="fas fa-times"></i></td>
                                 <td class="top-cell">60 zile</td>
-                            </tr>
-                            <tr>
-                                <td class="feature-name">Domeniu .ro</td>
-                                <td class="basic-cell">GRATUIT 1 an</td>
-                                <td class="plus-cell">GRATUIT 1 an</td>
-                                <td class="top-cell">GRATUIT 1 an</td>
                             </tr>
                         </tbody>
                     </table>
@@ -434,54 +433,42 @@
         </div>
     </section>
 
+    <!-- ===== ECONOMII ===== -->
     <section id="economii" class="savings">
         <div class="container">
             <div class="section-header">
-                <h2>💰 Economisești <span class="highlight">peste 1.000 RON</span> cu orice pachet!</h2>
-                <p>Valoarea reală a serviciilor pe care le primești</p>
+                <h2>Cât <span class="highlight">Economisești</span> cu Noi</h2>
+                <p>Valoarea reală a serviciilor incluse în pachetele noastre</p>
             </div>
-            
             <div class="savings-grid">
-                <div class="saving-card">
-                    <div class="saving-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>Domeniu .ro GRATUIT</h3>
-                    <p class="saving-value">Valoare: <strong>100 RON</strong></p>
-                    <p class="saving-desc">Primul an complet gratuit la toate pachetele</p>
+                <div class="saving-card glass-card">
+                    <div class="saving-icon"><i class="fas fa-globe"></i></div>
+                    <h3>Domeniu .ro</h3>
+                    <p class="saving-value">≈ 100 RON</p>
+                    <p class="saving-desc">Inclus gratuit primul an</p>
                 </div>
-                
-                <div class="saving-card">
-                    <div class="saving-icon">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <h3>Training specializat</h3>
-                    <p class="saving-value">Valoare: <strong>300+ RON</strong></p>
-                    <p class="saving-desc">Training personalizat cu expert Shopify</p>
+                <div class="saving-card glass-card">
+                    <div class="saving-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Training Expert</h3>
+                    <p class="saving-value">300+ RON</p>
+                    <p class="saving-desc">Training personalizat 1-la-1</p>
                 </div>
-                
-                <div class="saving-card">
-                    <div class="saving-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Setup profesionist</h3>
-                    <p class="saving-value">Valoare: <strong>400+ RON</strong></p>
-                    <p class="saving-desc">Configurare completă economisește 20+ ore</p>
+                <div class="saving-card glass-card">
+                    <div class="saving-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Setup Profesionist</h3>
+                    <p class="saving-value">400+ RON</p>
+                    <p class="saving-desc">Configurare completă — 20+ ore economie</p>
                 </div>
-                
-                <div class="saving-card">
-                    <div class="saving-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>Suport dedicat</h3>
-                    <p class="saving-value">Valoare: <strong>200+ RON</strong></p>
+                <div class="saving-card glass-card">
+                    <div class="saving-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Suport Dedicat</h3>
+                    <p class="saving-value">200+ RON</p>
                     <p class="saving-desc">Asistență directă pe WhatsApp</p>
                 </div>
             </div>
-            
             <div class="savings-total">
                 <div class="total-box">
-                    <h4>TOTAL ECONOMII</h4>
+                    <h4>Total Economii</h4>
                     <div class="total-amount">1.000+ RON</div>
                     <p>+ oferta Shopify 1€/lună primele 3 luni (economie 78€)</p>
                 </div>
@@ -489,78 +476,97 @@
         </div>
     </section>
 
+    <!-- ===== FAQ ===== -->
     <section id="faq" class="faq-section">
         <div class="container">
             <div class="section-header">
-                <h2>Întrebări Frecvente</h2>
-                <p>Află mai multe despre modul în care vom lucra împreună.</p>
+                <h2>Întrebări <span class="highlight">Frecvente</span></h2>
+                <p>Răspunsuri clare la cele mai comune întrebări despre colaborarea cu noi.</p>
             </div>
             <div class="faq-accordion">
                 <div class="faq-item glass-card">
-                    <button class="faq-question">1. Cât costă abonamentul lunar Shopify? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer">
-                        <p>Plătești doar 1€/lună în primele 3 luni datorită parteneriatului nostru. Ulterior, pachetul de bază este de 27€/lună.</p>
+                    <button class="faq-question" id="faq-1">
+                        Cât costă abonamentul lunar Shopify?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" aria-labelledby="faq-1">
+                        <p>Datorită parteneriatului nostru, plătești doar <strong>1€/lună</strong> în primele 3 luni. Ulterior, planul Shopify Basic este de 27€/lună (facturat anual). Acesta este plătit direct către Shopify Inc., nu nouă.</p>
                     </div>
                 </div>
                 <div class="faq-item glass-card">
-                    <button class="faq-question">2. Am nevoie de firmă (SRL/PFA) pentru a lansa? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer">
-                        <p>Da, pentru a procesa plăți legale și a semna contractele de curierat vei avea nevoie de o entitate juridică activă în România.</p>
+                    <button class="faq-question" id="faq-2">
+                        Am nevoie de firmă (SRL/PFA) pentru a lansa?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" aria-labelledby="faq-2">
+                        <p>Da, pentru a procesa plăți legale și a semna contractele cu furnizorii de curierat ai nevoie de o entitate juridică activă în România (SRL sau PFA). Te ajutăm cu recomandări dacă nu ai deja una.</p>
                     </div>
                 </div>
                 <div class="faq-item glass-card">
-                    <button class="faq-question">3. Oferiți mentenanță și suport tehnic după finalizare? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer">
-                        <p>Pachetele noastre includ perioade extinse de asistență pe WhatsApp. Suntem la un mesaj distanță pentru a rezolva orice mică dificultate.</p>
+                    <button class="faq-question" id="faq-3">
+                        Oferiți mentenanță și suport tehnic după finalizare?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" aria-labelledby="faq-3">
+                        <p>Pachetele noastre includ perioade extinse de asistență pe WhatsApp (60 de zile pentru TOP). Suntem la un mesaj distanță pentru a rezolva orice dificultate post-lansare.</p>
                     </div>
                 </div>
                 <div class="faq-item glass-card">
-                    <button class="faq-question">4. Pot vinde atât la nivel național cât și internațional? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer">
-                        <p>Absolut! Magazinul tău Shopify poate procesa vânzări în mai multe zone (ex: UE), având costuri de transport adaptate.</p>
+                    <button class="faq-question" id="faq-4">
+                        Pot vinde atât național cât și internațional?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" aria-labelledby="faq-4">
+                        <p>Absolut! Shopify suportă vânzări în multiple țări cu setări de livrare, monede și limbi multiple. Magazinul tău poate fi configurat să vândă în toată UE sau global.</p>
                     </div>
                 </div>
                 <div class="faq-item glass-card">
-                    <button class="faq-question">5. Cine deține cu adevărat site-ul, codul și datele? <i class="fas fa-chevron-down"></i></button>
-                    <div class="faq-answer">
-                        <p>Totul îți aparține. Domeniul .ro, baza de clienți și contul Shopify sunt transferate 100% în proprietatea firmei tale la finalizarea proiectului.</p>
+                    <button class="faq-question" id="faq-5">
+                        Cine deține site-ul, codul și datele magazinului?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" aria-labelledby="faq-5">
+                        <p>Totul îți aparține 100%. Domeniul .ro, baza de date cu clienți și contul Shopify sunt transferate complet în proprietatea firmei tale imediat după finalizarea proiectului.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ===== CONTACT ===== -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Completează formularul și începem!</h2>
-                <p>Te vom suna în maxim 30 de minute pentru detalii</p>
+                <h2>Hai să <span class="highlight">Vorbim</span></h2>
+                <p>Suntem disponibili zilnic pentru a-ți răspunde la orice întrebare și a porni treaba rapid.</p>
             </div>
-            
             <div class="contact-container">
                 <div class="contact-info">
                     <h3><i class="fas fa-phone-alt"></i> Sună acum</h3>
                     <a href="tel:+40785735820" class="contact-phone">0785 735 820</a>
-                    
+
                     <h3><i class="fas fa-envelope"></i> Scrie-ne</h3>
                     <a href="mailto:selleasy.romania@gmail.com" class="contact-email">selleasy.romania@gmail.com</a>
-                    
+
                     <h3><i class="fas fa-clock"></i> Program lucru</h3>
-                    <p>Luni - Vineri: 9:00 - 20:00</p>
-                    <p>Sâmbătă: 10:00 - 14:00</p>
-                    
+                    <p>Luni – Vineri: 9:00 – 20:00</p>
+                    <p>Sâmbătă: 10:00 – 14:00</p>
+
                     <div class="contact-urgency">
                         <i class="fas fa-bolt"></i>
                         <p><strong>URGENȚĂ?</strong> Ne găsești pe WhatsApp 24/7</p>
                     </div>
                 </div>
-                
+
                 <div class="chat-consultancy-wrapper">
-                    <h3 class="chat-title"><i class="fas fa-crown"></i> Consultanță Premium</h3>
-                    <p class="chat-subtitle">Suntem gata să transformăm afacerea ta. Alege modul de comunicare:</p>
-                    
+                    <h3 class="chat-title">
+                        <i class="fas fa-crown"></i> Consultanță Premium
+                    </h3>
+                    <p class="chat-subtitle">
+                        Suntem gata să transformăm afacerea ta. Alege modul de comunicare preferat:
+                    </p>
                     <div class="chat-buttons">
-                        <a href="https://wa.me/40785735820?text=Bună!%20Aș%20dori%20o%20oferta%20pentru%20magazin%20online." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                        <a href="https://wa.me/40785735820?text=Bun%C4%83!%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20un%20magazin%20online%20Shopify." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-whatsapp"></i> WhatsApp Direct
                         </a>
                         <a href="https://t.me/username" class="btn btn-telegram" target="_blank" rel="noopener noreferrer">
@@ -572,46 +578,52 @@
         </div>
     </section>
 
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <div class="brand">
+                    <div class="nav-brand">
                         <img src="https://cdn-icons-png.flaticon.com/512/5968/5968875.png" alt="Shopify Logo" class="logo">
                         <span class="brand-text">SHOPIFY<span class="brand-accent">EXPERT</span>.RO</span>
                     </div>
-                    <p class="footer-description">Specialiști în crearea de magazine online pe Shopify pentru afacerile din România.</p>
+                    <p class="footer-description">
+                        Specialiști în crearea de magazine online pe Shopify pentru afacerile din România. Rapid, profesionist și cu suport dedicat.
+                    </p>
                 </div>
-                
+
                 <div class="footer-links">
-                    <h4>Link-uri utile</h4>
+                    <h4>Navigare</h4>
                     <ul>
-                        <li><a href="#pachete">Pachete servicii</a></li>
-                        <li><a href="#comparatie">Comparație pachete</a></li>
+                        <li><a href="#cum-lucram">Cum lucrăm</a></li>
+                        <li><a href="#portofoliu">Portofoliu</a></li>
+                        <li><a href="#pachete">Pachete</a></li>
+                        <li><a href="#comparatie">Comparație</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li><a href="https://www.shopify.com/ro" target="_blank" rel="noopener noreferrer">Shopify România</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-legal">
                     <h4>Conformitate legală</h4>
                     <ul>
                         <li><a href="https://anpc.ro" target="_blank" rel="noopener noreferrer">ANPC</a></li>
-                        <li><a href="https://sol.ro" target="_blank" rel="noopener noreferrer">SOL</a></li>
+                        <li><a href="https://sol.ro" target="_blank" rel="noopener noreferrer">SOL — Soluționarea Online a Litigiilor</a></li>
                         <li><a href="#">Termeni și condiții</a></li>
                         <li><a href="#">Politică de confidențialitate</a></li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>© 2024 ShopifyExpert.ro. Toate drepturile rezervate. Prețurile afișate nu includ TVA.</p>
-                <p class="footer-note">Servicii de consultanță și implementare Shopify pentru afacerile din România.</p>
+                <p>© 2026 ShopifyExpert.ro — S.C. Greieras Music Studio SRL | CUI: RO44749026</p>
+                <p class="footer-note">Prețurile afișate nu includ TVA.</p>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/40785735820?text=Bună!%20Aș%20dori%20o%20oferta%20pentru%20magazin%20online." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/40785735820?text=Bun%C4%83!%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20un%20magazin%20online%20Shopify." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat pe WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 

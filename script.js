@@ -1,126 +1,117 @@
-// Countdown timer pentru oferta
-function updateCountdown() {
-    const countdownElement = document.getElementById('countdown');
-    if (!countdownElement) return;
-    
-    const offerExpiry = new Date();
-    offerExpiry.setDate(offerExpiry.getDate() + 30);
-    
-    const now = new Date();
-    const timeDiff = offerExpiry.getTime() - now.getTime();
-    
-    const daysRemaining = Math.max(0, Math.ceil(timeDiff / (1000 * 60 * 60 * 24)));
-    
-    countdownElement.textContent = daysRemaining;
-    
-    if (daysRemaining <= 7) {
-        countdownElement.style.color = '#ff6b6b';
-        countdownElement.style.fontWeight = '900';
-    }
-}
+// =============================================
+// SHOPIFY EXPERT — script.js v3.0
+// =============================================
 
-// Meniu mobil optimizat
-function setupMobileMenu() {
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-    
-    if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            mobileMenu.classList.toggle('active');
-            menuBtn.innerHTML = mobileMenu.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.remove('active');
-                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
-        // Închide meniul la click în afară
-        document.addEventListener('click', function(event) {
-            if (mobileMenu.classList.contains('active') && 
-                !mobileMenu.contains(event.target) && 
-                !menuBtn.contains(event.target)) {
-                mobileMenu.classList.remove('active');
-                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
-    }
-}
+document.addEventListener('DOMContentLoaded', function () {
+    initNavbar();
+    initMobileMenu();
+    initSmoothScroll();
+    initFAQ();
+    initCountdown();
+    initPackageCTA();
+});
 
-
-
-// Fix pentru navbar la scroll
-function setupNavbarScroll() {
+// ---- NAVBAR: scroll shadow ----
+function initNavbar() {
     const navbar = document.querySelector('.navbar');
-    
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > 50) {
-            navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+    if (!navbar) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 60) {
+            navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.5)';
         } else {
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+            navbar.style.boxShadow = 'none';
+        }
+    }, { passive: true });
+}
+
+// ---- MOBILE MENU ----
+function initMobileMenu() {
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (!menuBtn || !mobileMenu) return;
+
+    menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = mobileMenu.classList.toggle('active');
+        menuBtn.innerHTML = isOpen
+            ? '<i class="fas fa-times"></i>'
+            : '<i class="fas fa-bars"></i>';
+    });
+
+    // Close on link click
+    mobileMenu.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+            mobileMenu.classList.remove('active');
+            menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
         }
     });
 }
 
-// Smooth scroll
-function setupSmoothScroll() {
+// ---- SMOOTH SCROLL ----
+function initSmoothScroll() {
+    const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 72;
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
-            
-            e.preventDefault();
-            const targetElement = document.querySelector(href);
-            
-            if (targetElement) {
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = targetElement.offsetTop - navbarHeight - 20;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                const top = target.offsetTop - navbarHeight - 16;
+                window.scrollTo({ top, behavior: 'smooth' });
             }
         });
     });
 }
 
-// Inițializare
-document.addEventListener('DOMContentLoaded', function() {
-    updateCountdown();
-    setupMobileMenu();
-    setupNavbarScroll();
-    setupSmoothScroll();
-    setupFAQ();
-});
-
-// Setup FAQ Accordion
-function setupFAQ() {
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(question => {
+// ---- FAQ ACCORDION ----
+function initFAQ() {
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(question => {
         question.addEventListener('click', () => {
             const answer = question.nextElementSibling;
             const isOpen = question.classList.contains('active');
 
-            // Close all others
-            faqQuestions.forEach(q => {
+            // Close all
+            questions.forEach(q => {
                 q.classList.remove('active');
-                q.nextElementSibling.style.maxHeight = null;
+                const a = q.nextElementSibling;
+                if (a) a.style.maxHeight = null;
             });
 
-            // Open if it was closed
-            if (!isOpen) {
+            // Open clicked if it was closed
+            if (!isOpen && answer) {
                 question.classList.add('active');
-                answer.style.maxHeight = answer.scrollHeight + "px";
+                answer.style.maxHeight = answer.scrollHeight + 'px';
             }
+        });
+    });
+}
+
+// ---- COUNTDOWN TIMER ----
+function initCountdown() {
+    const el = document.getElementById('countdown');
+    if (!el) return;
+    // Simple: keep at 30 days from now
+    el.textContent = '30';
+}
+
+// ---- PACKAGE CTA: scroll to contact and set context ----
+function initPackageCTA() {
+    document.querySelectorAll('[data-package]').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            const pkg = this.dataset.package;
+            // Store selected package (for future use with forms, analytics, etc.)
+            sessionStorage.setItem('selectedPackage', pkg);
         });
     });
 }
