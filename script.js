@@ -99,4 +99,28 @@ document.addEventListener('DOMContentLoaded', function() {
     setupMobileMenu();
     setupNavbarScroll();
     setupSmoothScroll();
+    setupFAQ();
 });
+
+// Setup FAQ Accordion
+function setupFAQ() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            const isOpen = question.classList.contains('active');
+
+            // Close all others
+            faqQuestions.forEach(q => {
+                q.classList.remove('active');
+                q.nextElementSibling.style.maxHeight = null;
+            });
+
+            // Open if it was closed
+            if (!isOpen) {
+                question.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+        });
+    });
+}
