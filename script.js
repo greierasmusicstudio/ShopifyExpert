@@ -6,7 +6,25 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initFAQ();
     initCountdown();
+    initReveal();
 });
+
+/* Reveal on scroll */
+function initReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
+    
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { rootMargin: '0px 0px -50px 0px', threshold: 0.05 });
+    
+    reveals.forEach(r => observer.observe(r));
+}
 
 /* Navbar shadow on scroll */
 function initNavScroll() {

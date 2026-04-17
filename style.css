@@ -1098,3 +1098,16 @@ a.contact-val:hover { color: var(--p-l); }
     .hero-kpis     { gap: 12px; }
     .kpi-sep       { display: none; }
 }
+
+/* ═══════════════════════════════════════════
+   PREMIUM EFFECTS
+═══════════════════════════════════════════ */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
