@@ -397,41 +397,22 @@ h1, h2, h3, h4 {
 .kpi span { font-size: 0.75rem; color: var(--t2); }
 .kpi-sep { width: 1px; height: 32px; background: var(--bdr-m); }
 
-/* Phone mockup */
-.hero-img-wrap { flex-shrink: 0; }
-.phone-mock {
-    width: 220px;
-    background: #111;
-    border-radius: 36px;
-    border: 2px solid #252525;
-    padding: 14px 12px;
-    box-shadow: 0 40px 90px rgba(0,0,0,.8),
-                inset 0 0 0 1px rgba(255,255,255,.05);
+.hero-centered {
+    flex-direction: column;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
-.phone-pill {
-    width: 56px;
-    height: 5px;
-    background: #2a2a2a;
-    border-radius: 3px;
-    margin: 0 auto 12px;
+.hero-centered .hero-sub {
+    margin-left: auto;
+    margin-right: auto;
 }
-.phone-screen {
-    border-radius: 22px;
-    overflow: hidden;
-    aspect-ratio: 9/16;
-    position: relative;
-    background: #000;
+.hero-centered .hero-btns {
+    justify-content: center;
 }
-.phone-screen img {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 250%;
-    object-fit: cover;
-    object-position: top;
-    transition: top 5s ease-in-out;
+.hero-centered .hero-kpis {
+    justify-content: center;
 }
-.phone-mock:hover .phone-screen img { top: -150%; }
 
 /* ═══════════════════════════════════════════
    OFFER STRIP
