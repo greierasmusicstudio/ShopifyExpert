@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Magazin Fashion | ShopifyExpert.ro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #121212;
+            --surface: #1e1e1e;
+            --text-main: #f5f5f5;
+            --text-mut: #a0a0a0;
+            --accent: #d4af37; /* gold */
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text-main); }
+        a { text-decoration: none; color: inherit; }
+        
+        /* Demo Banner */
+        .demo-bar {
+            background: #6d43f5;
+            color: #fff;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .demo-bar a { background: rgba(0,0,0,0.2); padding: 6px 12px; border-radius: 4px; font-weight: bold; }
+        .demo-bar a:hover { background: rgba(0,0,0,0.4); }
+
+        /* Store Header */
+        header { border-bottom: 1px solid #333; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--accent); letter-spacing: 2px; }
+        nav { display: flex; gap: 30px; }
+        nav a { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        nav a:hover { color: var(--accent); }
+        .header-icons { display: flex; gap: 20px; font-size: 1.2rem; }
+
+        /* Hero */
+        .hero { 
+            height: 70vh; 
+            background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2000&auto=format&fit=crop') center/cover;
+            display: flex; flex-direction: column; justify-content: center; padding: 0 10%;
+        }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 20px; max-width: 600px; line-height: 1.1; }
+        .hero p { font-size: 1.1rem; margin-bottom: 30px; color: #ddd; max-width: 500px; }
+        .btn { display: inline-block; padding: 15px 35px; background: var(--accent); color: #000; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; transition: opacity 0.3s; }
+        .btn:hover { opacity: 0.8; }
+
+        /* Products Config */
+        .section { padding: 80px 10%; }
+        .sec-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 50px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; }
+        .product { background: var(--surface); transition: transform 0.3s; cursor: pointer; }
+        .product:hover { transform: translateY(-5px); }
+        .p-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; }
+        .p-info { padding: 20px; text-align: center; }
+        .p-brand { font-size: 0.8rem; color: var(--text-mut); text-transform: uppercase; margin-bottom: 5px; }
+        .p-title { font-size: 1.1rem; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+        .p-price { font-weight: 500; color: var(--accent); }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .demo-bar { flex-direction: column; gap: 10px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="demo-bar">
+        <span>👀 Previzualizare Concept: Magazin Fashion Shopify</span>
+        <a href="index.html#portofoliu"><i class="fas fa-arrow-left"></i> Înapoi la ShopifyExpert.ro</a>
+    </div>
+
+    <header>
+        <div class="logo">LUXE MODE</div>
+        <nav>
+            <a href="#">Femei</a>
+            <a href="#">Bărbați</a>
+            <a href="#">Accesorii</a>
+            <a href="#">Noutăți</a>
+        </nav>
+        <div class="header-icons">
+            <i class="fas fa-search"></i>
+            <i class="far fa-heart"></i>
+            <i class="fas fa-shopping-bag"></i>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>Eleganța care definește toamna.</h1>
+        <p>Descoperă noua colecție capsulă de paltoane și accesorii premium pentru un sezon plin de stil.</p>
+        <div><a href="#" class="btn">Explorează Colecția</a></div>
+    </div>
+
+    <div class="section">
+        <h2 class="sec-title">Produse Recomandate</h2>
+        <div class="grid">
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&auto=format&fit=crop" alt="Rochie" class="p-img">
+                <div class="p-info">
+                    <div class="p-brand">LUXE MODE</div>
+                    <div class="p-title">Rochie Neagră de Seară Velvet</div>
+                    <div class="p-price">1.250 RON</div>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1550639524-a6f58345a011?w=500&auto=format&fit=crop" alt="Sacou" class="p-img">
+                <div class="p-info">
+                    <div class="p-brand">COLECTIE NOUA</div>
+                    <div class="p-title">Sacou Minimalist Camel Wool</div>
+                    <div class="p-price">980 RON</div>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1572804013309-8c98e10f1ba6?w=500&auto=format&fit=crop" alt="Camasa" class="p-img">
+                <div class="p-info">
+                    <div class="p-brand">ESSENTIALS</div>
+                    <div class="p-title">Cămașă Silk Emerald</div>
+                    <div class="p-price">650 RON</div>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500&auto=format&fit=crop" alt="Pantaloni" class="p-img">
+                <div class="p-info">
+                    <div class="p-brand">ESSENTIALS</div>
+                    <div class="p-title">Pantaloni Croi Drept Negri</div>
+                    <div class="p-price">590 RON</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

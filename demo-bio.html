@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Magazin Bio & Naturist | ShopifyExpert.ro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2d5a3c;
+            --bg: #fdfbf7;
+            --surface: #ffffff;
+            --text-main: #333333;
+            --text-mut: #666666;
+            --accent: #8fb996;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text-main); }
+        a { text-decoration: none; color: inherit; }
+        
+        /* Demo Banner */
+        .demo-bar {
+            background: #8fb996;
+            color: #111;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .demo-bar a { background: rgba(0,0,0,0.1); padding: 6px 12px; border-radius: 4px; font-weight: 600; }
+        .demo-bar a:hover { background: rgba(0,0,0,0.2); }
+
+        /* Store Header */
+        header { background: var(--primary); color: white; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Lora', serif; font-size: 1.8rem; font-weight: 600; letter-spacing: 1px; display: flex; align-items: center; gap: 10px;}
+        .logo i { color: var(--accent); }
+        nav { display: flex; gap: 30px; font-size: 0.95rem; }
+        nav a { transition: color 0.3s; }
+        nav a:hover { color: var(--accent); }
+        .header-icons { display: flex; gap: 20px; font-size: 1.2rem; }
+        .header-icons span { font-size: 0.9rem; font-weight: 500; display: flex; align-items: center; gap: 5px; }
+
+        /* Trust bar */
+        .trust-bar { background: var(--surface); padding: 15px 5%; display: flex; justify-content: center; gap: 50px; font-size: 0.85rem; color: var(--primary); font-weight: 500; border-bottom: 1px solid #eee; }
+        .trust-bar i { margin-right: 5px; color: var(--accent); font-size: 1.1rem; }
+
+        /* Hero */
+        .hero { 
+            height: 500px; 
+            background: linear-gradient(to right, rgba(253, 251, 247, 0.9), rgba(253, 251, 247, 0.4)), url('https://images.unsplash.com/photo-1611078512595-8bd11eec6541?auto=format') right/cover;
+            display: flex; flex-direction: column; justify-content: center; padding: 0 10%;
+        }
+        .hero h1 { font-family: 'Lora', serif; font-size: 3.5rem; margin-bottom: 20px; max-width: 600px; color: var(--primary); line-height: 1.2; }
+        .hero p { font-size: 1.1rem; margin-bottom: 30px; color: var(--text-mut); max-width: 500px; line-height: 1.6; }
+        .btn { display: inline-block; padding: 14px 35px; background: var(--primary); color: #fff; font-weight: 500; border-radius: 30px; transition: 0.3s; }
+        .btn:hover { background: #22422a; }
+
+        /* Products Config */
+        .section { padding: 80px 10%; text-align: center; }
+        .sec-title { font-family: 'Lora', serif; font-size: 2.2rem; margin-bottom: 20px; color: var(--primary); }
+        .sec-desc { color: var(--text-mut); margin-bottom: 50px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 40px; text-align: left; }
+        .product { background: var(--surface); border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.04); transition: transform 0.3s; }
+        .product:hover { transform: translateY(-8px); }
+        .p-img-wrap { position: relative; }
+        .p-img { width: 100%; height: 250px; object-fit: cover; }
+        .badge { position: absolute; top: 15px; left: 15px; background: white; color: var(--primary); padding: 5px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; display: flex; align-items: center; gap: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        
+        .p-info { padding: 25px; }
+        .p-title { font-family: 'Lora', serif; font-size: 1.2rem; margin-bottom: 8px; color: var(--primary); font-weight: 600; }
+        .p-stars { color: #f5b041; font-size: 0.8rem; margin-bottom: 15px; }
+        .p-btm { display: flex; justify-content: space-between; align-items: center; }
+        .p-price { font-weight: 600; font-size: 1.2rem; }
+        .p-add { background: var(--bg); border: 1px solid var(--accent); color: var(--primary); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.3s; }
+        .p-add:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+        @media (max-width: 768px) {
+            nav, .trust-bar { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .demo-bar { flex-direction: column; gap: 10px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="demo-bar">
+        <span>👀 Previzualizare Concept: Magazin Bio & Naturiste</span>
+        <a href="index.html#portofoliu"><i class="fas fa-arrow-left"></i> Înapoi la ShopifyExpert.ro</a>
+    </div>
+
+    <header>
+        <div class="logo"><i class="fas fa-leaf"></i> NaturaBio</div>
+        <nav>
+            <a href="#">Cosmetice Naturale</a>
+            <a href="#">Suplimente</a>
+            <a href="#">Alimente Bio</a>
+            <a href="#">Remedii</a>
+        </nav>
+        <div class="header-icons">
+            <i class="fas fa-search"></i>
+            <i class="far fa-user"></i>
+            <span><i class="fas fa-shopping-basket"></i> 0,00 RON</span>
+        </div>
+    </header>
+
+    <div class="trust-bar">
+        <span><i class="fas fa-check-circle"></i> 100% Organic & Bio</span>
+        <span><i class="fas fa-truck"></i> Livrare Rapidă 24h</span>
+        <span><i class="fas fa-seedling"></i> Ingrediente Certificate</span>
+    </div>
+
+    <div class="hero">
+        <h1>Bunătăți organice din inima naturii.</h1>
+        <p>Produse naturale, tradiționale și certificate bio pentru sănătatea și frumusețea ta, livrate direct la ușa ta.</p>
+        <div><a href="#" class="btn">Cumpără Organic</a></div>
+    </div>
+
+    <div class="section">
+        <h2 class="sec-title">Remediile Noastre Favorite</h2>
+        <p class="sec-desc">Alese cu grijă de experții noștri în nutriție și îngrijire naturală.</p>
+        
+        <div class="grid">
+            <div class="product">
+                <div class="p-img-wrap">
+                    <div class="badge"><i class="fas fa-leaf"></i> 100% Bio</div>
+                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=500&auto=format&fit=crop" alt="Ulei" class="p-img">
+                </div>
+                <div class="p-info">
+                    <div class="p-title">Ulei Esențial de Lavandă Bio</div>
+                    <div class="p-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="p-btm">
+                        <div class="p-price">45.00 RON</div>
+                        <button class="p-add"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product">
+                <div class="p-img-wrap">
+                    <div class="badge"><i class="fas fa-leaf"></i> Natural</div>
+                    <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&auto=format&fit=crop" alt="Crema" class="p-img">
+                </div>
+                <div class="p-info">
+                    <div class="p-title">Cremă de Față Hidratantă</div>
+                    <div class="p-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                    <div class="p-btm">
+                        <div class="p-price">89.90 RON</div>
+                        <button class="p-add"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="p-img-wrap">
+                    <div class="badge"><i class="fas fa-leaf"></i> Vegan</div>
+                    <img src="https://images.unsplash.com/photo-1544253139-38379051fb6f?w=500&auto=format&fit=crop" alt="Ceai" class="p-img">
+                </div>
+                <div class="p-info">
+                    <div class="p-title">Ceai Herbal Relaxare</div>
+                    <div class="p-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                    <div class="p-btm">
+                        <div class="p-price">34.90 RON</div>
+                        <button class="p-add"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="p-img-wrap">
+                    <div class="badge"><i class="fas fa-leaf"></i> 100% Bio</div>
+                    <img src="https://images.unsplash.com/photo-1587049352847-4d4b1a629b38?w=500&auto=format&fit=crop" alt="Mixt" class="p-img">
+                </div>
+                <div class="p-info">
+                    <div class="p-title">Mix Săpunuri Naturale</div>
+                    <div class="p-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="p-btm">
+                        <div class="p-price">65.00 RON</div>
+                        <button class="p-add"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

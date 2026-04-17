@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Magazin Electronice | ShopifyExpert.ro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0056b3;
+            --bg: #f8f9fa;
+            --surface: #ffffff;
+            --text-main: #212529;
+            --text-mut: #6c757d;
+            --accent: #ff6b00;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Roboto', sans-serif; background: var(--bg); color: var(--text-main); }
+        a { text-decoration: none; color: inherit; }
+        
+        /* Demo Banner */
+        .demo-bar {
+            background: #222;
+            color: #fff;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .demo-bar a { background: var(--primary); padding: 6px 12px; border-radius: 4px; font-weight: 600; }
+        .demo-bar a:hover { background: #004494; }
+
+        /* Store Header */
+        header { background: var(--surface); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .header-top { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; border-bottom: 1px solid #efefef;}
+        .logo { font-size: 1.8rem; font-weight: 900; color: var(--primary); letter-spacing: -1px; }
+        .logo span { color: var(--text-main); }
+        .search-bar { flex: 1; max-width: 500px; display: flex; margin: 0 30px; }
+        .search-bar input { width: 100%; border: 2px solid var(--primary); padding: 10px 15px; border-radius: 4px 0 0 4px; outline: none; }
+        .search-bar button { background: var(--primary); color: white; border: none; padding: 0 20px; border-radius: 0 4px 4px 0; cursor: pointer; }
+        .header-icons { display: flex; gap: 20px; font-size: 1.2rem; align-items: center; }
+        .header-icons i { color: var(--text-main); }
+        .cart { display: flex; align-items: center; gap: 8px; font-weight: 700; }
+        
+        nav { padding: 15px 5%; display: flex; gap: 30px; background: var(--primary); color: white; font-weight: 500;}
+        nav a { transition: color 0.3s; }
+        nav a:hover { color: #d0e1f9; }
+
+        /* Hero */
+        .hero { 
+            height: 400px; 
+            margin: 20px 5%;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #1f2833, #0b0c10), url('https://images.unsplash.com/photo-1550009158-9ffcb0eeda60?auto=format') center/cover;
+            background-blend-mode: overlay;
+            display: flex; flex-direction: column; justify-content: center; padding: 0 5%;
+            color: white;
+        }
+        .hero h1 { font-size: 3rem; font-weight: 900; margin-bottom: 10px; text-transform: uppercase; }
+        .hero p { font-size: 1.2rem; margin-bottom: 25px; color: #ddd; }
+        .btn { display: inline-block; padding: 12px 30px; background: var(--accent); color: #fff; font-weight: 700; border-radius: 4px; letter-spacing: 0.5px; }
+
+        /* Products Config */
+        .section { padding: 50px 5%; }
+        .sec-title { text-align: center; font-size: 2rem; margin-bottom: 40px; font-weight: 900; color: #111;}
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 30px; }
+        .product { background: var(--surface); padding: 20px; border-radius: 8px; border: 1px solid #e9ecef; transition: box-shadow 0.3s; text-align: center;}
+        .product:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+        .p-img { width: 80%; height: 200px; object-fit: contain; margin-bottom: 20px; }
+        .p-title { font-size: 1rem; margin-bottom: 10px; font-weight: 500; height: 40px; overflow: hidden;}
+        .p-rating { color: #ffc107; font-size: 0.8rem; margin-bottom: 10px; }
+        .p-price { font-weight: 900; font-size: 1.3rem; color: #111; margin-bottom: 15px; }
+        .p-btn { display: block; width: 100%; padding: 10px; border: 2px solid var(--primary); color: var(--primary); font-weight: 700; border-radius: 4px; transition: 0.3s; background: white;}
+        .product:hover .p-btn { background: var(--primary); color: white; }
+
+        @media (max-width: 768px) {
+            .search-bar { display: none; }
+            nav { overflow-x: auto; white-space: nowrap; }
+            .hero h1 { font-size: 2rem; }
+            .demo-bar { flex-direction: column; gap: 10px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="demo-bar">
+        <span>👀 Previzualizare Concept: Magazin Electronice & IT</span>
+        <a href="index.html#portofoliu"><i class="fas fa-arrow-left"></i> Înapoi la ShopifyExpert.ro</a>
+    </div>
+
+    <header>
+        <div class="header-top">
+            <div class="logo">Tech<span>Store</span></div>
+            <div class="search-bar">
+                <input type="text" placeholder="Caută laptopuri, telefoane, accesorii...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-icons">
+                <i class="far fa-user"></i>
+                <i class="far fa-heart"></i>
+                <div class="cart"><i class="fas fa-shopping-cart"></i> (0)</div>
+            </div>
+        </div>
+        <nav>
+            <a href="#">Telefoane</a>
+            <a href="#">Laptopuri</a>
+            <a href="#">Audio</a>
+            <a href="#">Smart Home</a>
+            <a href="#">Oferte Zilei <i class="fas fa-fire" style="color:var(--accent)"></i></a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Reduceri de Vară</h1>
+        <p>Până la -40% la cele mai noi gadgeturi. Stoc limitat!</p>
+        <div><a href="#" class="btn">Vezi Oferta</a></div>
+    </div>
+
+    <div class="section">
+        <h2 class="sec-title">Cele Mai Noi Gadgeturi</h2>
+        <div class="grid">
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500&auto=format&fit=crop" alt="Telefon" class="p-img">
+                <div class="p-title">Samsung Galaxy S23 Ultra 5G, 256GB, Negru</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> (128 revizii)</div>
+                <div class="p-price">5.499 RON</div>
+                <button class="p-btn"><i class="fas fa-cart-plus"></i> Adaugă</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&auto=format&fit=crop" alt="Laptop" class="p-img">
+                <div class="p-title">Apple MacBook Air 13" M2, 8GB RAM, 256GB SSD</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (95 revizii)</div>
+                <div class="p-price">6.249 RON</div>
+                <button class="p-btn"><i class="fas fa-cart-plus"></i> Adaugă</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&auto=format&fit=crop" alt="Casti" class="p-img">
+                <div class="p-title">Căști Sony WF-1000XM5 True Wireless Noise Canceling</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> (42 revizii)</div>
+                <div class="p-price">1.399 RON</div>
+                <button class="p-btn"><i class="fas fa-cart-plus"></i> Adaugă</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&auto=format&fit=crop" alt="Ceas" class="p-img">
+                <div class="p-title">Smartwatch Apple Watch Series 8, GPS, 45mm</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> (88 revizii)</div>
+                <div class="p-price">2.199 RON</div>
+                <button class="p-btn"><i class="fas fa-cart-plus"></i> Adaugă</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
