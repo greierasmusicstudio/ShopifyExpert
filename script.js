@@ -53,69 +53,7 @@ function setupMobileMenu() {
     }
 }
 
-// Google Forms Integration - REPARAT
-function setupContactForm() {
-    const form = document.getElementById('contactForm');
-    const successMessage = document.getElementById('formSuccess');
-    const submitBtn = form ? form.querySelector('.btn-submit') : null;
-    
-    if (!form || !submitBtn) return;
-    
-    // Selectarea automată a pachetului dacă venim din butoane
-    document.querySelectorAll('.btn-package').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const pkg = btn.getAttribute('data-package');
-            const select = document.getElementById('package');
-            if(select) {
-                // Mapare simplă valori
-                if(pkg === 'basic') select.selectedIndex = 1;
-                if(pkg === 'plus') select.selectedIndex = 2;
-                if(pkg === 'top') select.selectedIndex = 3;
-            }
-        });
-    });
 
-    // Gestionare submit
-    form.addEventListener('submit', function(e) {
-        // Validare de bază
-        const name = document.getElementById('name').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const packageSelected = document.getElementById('package').value;
-        
-        if (!name || !phone || !packageSelected) {
-            e.preventDefault(); 
-            alert('Vă rugăm să completați toate câmpurile obligatorii!');
-            return;
-        }
-        
-        if (phone.length < 10) {
-            e.preventDefault();
-            alert('Vă rugăm să introduceți un număr de telefon valid!');
-            return;
-        }
-        
-        // Dacă e valid, lăsăm formularul să se trimită către iframe (NU dăm preventDefault)
-        // Dar schimbăm UI-ul imediat
-        
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Se trimite...';
-        submitBtn.disabled = true;
-        
-        // Așteptăm puțin ca datele să plece, apoi arătăm succesul
-        setTimeout(() => {
-            form.style.display = 'none';
-            if (successMessage) {
-                successMessage.classList.remove('hidden');
-                successMessage.style.display = 'flex';
-            }
-            form.reset();
-            
-            // Re-activare buton pentru viitor
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        }, 1500);
-    });
-}
 
 // Fix pentru navbar la scroll
 function setupNavbarScroll() {
@@ -159,7 +97,6 @@ function setupSmoothScroll() {
 document.addEventListener('DOMContentLoaded', function() {
     updateCountdown();
     setupMobileMenu();
-    setupContactForm();
     setupNavbarScroll();
     setupSmoothScroll();
 });
