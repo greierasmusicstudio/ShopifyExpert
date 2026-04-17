@@ -1,8 +1,9 @@
-// =============================================
-// SHOPIFY EXPERT — script.js v3.0
-// =============================================
+/* =============================================
+   SHOPIFY EXPERT — script.js v4.0
+   ============================================= */
+'use strict';
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
     initMobileMenu();
     initSmoothScroll();
@@ -11,107 +12,131 @@ document.addEventListener('DOMContentLoaded', function () {
     initPackageCTA();
 });
 
-// ---- NAVBAR: scroll shadow ----
+/* ── NAVBAR: backdrop shadow on scroll ─── */
 function initNavbar() {
-    const navbar = document.querySelector('.navbar');
+    const navbar = document.getElementById('navbar');
     if (!navbar) return;
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 60) {
-            navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.5)';
-        } else {
-            navbar.style.boxShadow = 'none';
-        }
-    }, { passive: true });
+    const onScroll = () => {
+        navbar.style.boxShadow = window.scrollY > 50
+            ? '0 2px 24px rgba(0,0,0,0.5)'
+            : 'none';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
 }
 
-// ---- MOBILE MENU ----
+/* ── MOBILE HAMBURGER MENU ───────────────── */
 function initMobileMenu() {
-    const menuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (!menuBtn || !mobileMenu) return;
+    const btn    = document.getElementById('hamburger');
+    const drawer = document.getElementById('mobileDrawer');
+    if (!btn || !drawer) return;
 
-    menuBtn.addEventListener('click', (e) => {
+    const close = () => {
+        drawer.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        drawer.setAttribute('aria-hidden', 'true');
+    };
+
+    btn.addEventListener('click', e => {
         e.stopPropagation();
-        const isOpen = mobileMenu.classList.toggle('active');
-        menuBtn.innerHTML = isOpen
-            ? '<i class="fas fa-times"></i>'
-            : '<i class="fas fa-bars"></i>';
+        const isOpen = drawer.classList.toggle('open');
+        btn.classList.toggle('open', isOpen);
+        btn.setAttribute('aria-expanded', isOpen);
+        drawer.setAttribute('aria-hidden', !isOpen);
     });
 
-    // Close on link click
-    mobileMenu.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        });
+    // Close on any drawer link click
+    drawer.querySelectorAll('.drawer-link, .btn').forEach(el => {
+        el.addEventListener('click', close);
     });
 
-    // Close on outside click
-    document.addEventListener('click', (e) => {
-        if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-            mobileMenu.classList.remove('active');
-            menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        }
+    // Close on outside tap
+    document.addEventListener('click', e => {
+        if (!btn.contains(e.target) && !drawer.contains(e.target)) close();
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') close();
     });
 }
 
-// ---- SMOOTH SCROLL ----
+/* ── SMOOTH SCROLL ───────────────────────── */
 function initSmoothScroll() {
-    const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 72;
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    const navH = document.getElementById('navbar')?.offsetHeight || 68;
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
             const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                const top = target.offsetTop - navbarHeight - 16;
-                window.scrollTo({ top, behavior: 'smooth' });
-            }
+            if (!target) return;
+            e.preventDefault();
+            const top = target.getBoundingClientRect().top + window.scrollY - navH - 12;
+            window.scrollTo({ top, behavior: 'smooth' });
         });
     });
 }
 
-// ---- FAQ ACCORDION ----
+/* ── FAQ ACCORDION ───────────────────────── */
 function initFAQ() {
-    const questions = document.querySelectorAll('.faq-question');
-    questions.forEach(question => {
-        question.addEventListener('click', () => {
-            const answer = question.nextElementSibling;
-            const isOpen = question.classList.contains('active');
+    const items = document.querySelectorAll('.faq-item');
 
-            // Close all
-            questions.forEach(q => {
-                q.classList.remove('active');
-                const a = q.nextElementSibling;
-                if (a) a.style.maxHeight = null;
+    items.forEach(item => {
+        const btn   = item.querySelector('.faq-btn');
+        const panel = item.querySelector('.faq-panel');
+        if (!btn || !panel) return;
+
+        btn.addEventListener('click', () => {
+            const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+            // Close all others
+            items.forEach(other => {
+                const ob = other.querySelector('.faq-btn');
+                const op = other.querySelector('.faq-panel');
+                if (ob && op && ob !== btn) {
+                    ob.setAttribute('aria-expanded', 'false');
+                    op.style.maxHeight = null;
+                }
             });
 
-            // Open clicked if it was closed
-            if (!isOpen && answer) {
-                question.classList.add('active');
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-            }
+            // Toggle clicked
+            const open = !isOpen;
+            btn.setAttribute('aria-expanded', open);
+            panel.style.maxHeight = open ? panel.scrollHeight + 'px' : null;
         });
     });
 }
 
-// ---- COUNTDOWN TIMER ----
+/* ── COUNTDOWN TIMER ─────────────────────── */
 function initCountdown() {
     const el = document.getElementById('countdown');
     if (!el) return;
-    // Simple: keep at 30 days from now
-    el.textContent = '30';
+
+    // Store expiry in sessionStorage so it persists page reloads
+    let expiry = sessionStorage.getItem('offerExpiry');
+    if (!expiry) {
+        expiry = Date.now() + 30 * 24 * 60 * 60 * 1000;
+        sessionStorage.setItem('offerExpiry', expiry);
+    }
+
+    const update = () => {
+        const diff = parseInt(expiry) - Date.now();
+        const days = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+        el.textContent = days;
+        if (days <= 5) el.style.color = '#ef4444';
+    };
+
+    update();
+    setInterval(update, 60_000);
 }
 
-// ---- PACKAGE CTA: scroll to contact and set context ----
+/* ── PACKAGE CTA ─────────────────────────── */
 function initPackageCTA() {
     document.querySelectorAll('[data-package]').forEach(btn => {
-        btn.addEventListener('click', function (e) {
-            const pkg = this.dataset.package;
-            // Store selected package (for future use with forms, analytics, etc.)
-            sessionStorage.setItem('selectedPackage', pkg);
+        btn.addEventListener('click', function () {
+            sessionStorage.setItem('selectedPackage', this.dataset.package);
         });
     });
 }
