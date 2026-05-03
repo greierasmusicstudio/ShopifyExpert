@@ -1,4 +1,53 @@
+# ==========================================
+# robots.txt — ShopifyExpert.ro
+# Actualizat: 2026-05-03
+# ==========================================
+
+# Toți roboții — acces complet la site
 User-agent: *
 Allow: /
 
+# Crawl-delay recomandat pentru roboți agresivi
+Crawl-delay: 5
+
+# ── Google ──────────────────────────────────
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+# ── Bing / Microsoft ──────────────────────
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 3
+
+# ── Social Media Crawlers ─────────────────
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# ── Schema / Rich Snippet Crawlers ────────
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+# ── Host declaration ──────────────────────
+Host: https://shopifyexpert.ro
+
+# ── Sitemap ───────────────────────────────
 Sitemap: https://shopifyexpert.ro/sitemap.xml

@@ -1,27 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   <url>
-      <loc>https://shopifyexpert.ro/</loc>
-      <lastmod>2026-04-17</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>1.0</priority>
-   </url>
-   <url>
-      <loc>https://shopifyexpert.ro/demo-fashion.html</loc>
-      <lastmod>2026-04-17</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://shopifyexpert.ro/demo-tech.html</loc>
-      <lastmod>2026-04-17</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://shopifyexpert.ro/demo-bio.html</loc>
-      <lastmod>2026-04-17</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="
+    http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+    http://www.google.com/schemas/sitemap-image/1.1
+    http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
+
+  <!-- Pagina principală — prioritate maximă -->
+  <url>
+    <loc>https://shopifyexpert.ro/</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://shopifyexpert.ro/images/portfolio-fashion.png</image:loc>
+      <image:title>Demo Magazin Fashion Shopify</image:title>
+      <image:caption>Exemplu magazin fashion creat de Shopify Expert România</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://shopifyexpert.ro/images/portfolio-tech.png</image:loc>
+      <image:title>Demo Magazin Electronice Shopify</image:title>
+      <image:caption>Exemplu magazin tech creat de Shopify Expert România</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://shopifyexpert.ro/images/portfolio-bio.png</image:loc>
+      <image:title>Demo Magazin Bio si Naturist Shopify</image:title>
+      <image:caption>Exemplu magazin bio creat de Shopify Expert România</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Pagini demo portofoliu -->
+  <url>
+    <loc>https://shopifyexpert.ro/demo-fashion.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://shopifyexpert.ro/images/portfolio-fashion.png</image:loc>
+      <image:title>Demo Magazin Fashion Shopify România</image:title>
+      <image:caption>Tema premium Shopify pentru industria fashion</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://shopifyexpert.ro/demo-tech.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://shopifyexpert.ro/images/portfolio-tech.png</image:loc>
+      <image:title>Demo Magazin Electronice Tech Shopify România</image:title>
+      <image:caption>Tema premium Shopify pentru magazine de electronice și gadgeturi</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://shopifyexpert.ro/demo-bio.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://shopifyexpert.ro/images/portfolio-bio.png</image:loc>
+      <image:title>Demo Magazin Bio Naturist Shopify România</image:title>
+      <image:caption>Tema premium Shopify pentru magazine bio, cosmetice organice, suplimente</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Secțiuni ancorate (pentru Google indexare directă) -->
+  <url>
+    <loc>https://shopifyexpert.ro/#pachete</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://shopifyexpert.ro/#servicii</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://shopifyexpert.ro/#portofoliu</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://shopifyexpert.ro/#contact</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://shopifyexpert.ro/#faq</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
